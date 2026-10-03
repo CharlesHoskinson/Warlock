@@ -1,0 +1,8 @@
+host-start: layer=1 sandbox=1 acceleration-policy=always fixture-only=1
+fixture-snapshot-delivered
+
+** (process:2): WARNING **: 10:39:04.757: Failed to get atspi registered event listeners: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+view-diagnostics: {"visibility":"visible","entries":0,"root":true,"receiver":"function","width":800,"height":420}
+QA render report deadline expired
+host-exit: failure=1 rendered=0

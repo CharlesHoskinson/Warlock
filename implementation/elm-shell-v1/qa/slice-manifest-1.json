@@ -1,0 +1,1681 @@
+{
+  "observedUTC": "2026-10-03T16:47:04.770374+00:00",
+  "scope": "First fixture-only Elm/native host slice; no production host selection or window-effects/GPU/AT acceptance",
+  "passed": true,
+  "elmChecks": 14,
+  "nativeHostTestGroups": 2,
+  "acceptedSurfaces": [
+    "xdg",
+    "layer"
+  ],
+  "currentLayerReport": "qa/native-smoke-1791045794585516607.json",
+  "finalPass": "qa/final-pass-20261003T162547/report.json",
+  "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ec9d41a6ac5db93c72ca4fbc45063edfb94ee18e7d8071ef7ab3dd5435d8cbde",
+      "bytes": 5160
+    },
+    {
+      "path": "assets/adapter.js",
+      "sha256": "12aaaacbff2dc6e65718a25ec63866c53b1a9b18b6a6ad03c0744cbbfde90ce8",
+      "bytes": 1239
+    },
+    {
+      "path": "assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/build-report.json",
+      "sha256": "b0f2dc868c5a6e27168739f54a2646ea5d68689de6ae6e50de7b3850488332a1",
+      "bytes": 4029
+    },
+    {
+      "path": "build/attempt-1/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/elm-build.stdout",
+      "sha256": "c3f376734e0ba1117dfe3c46329a13b5b97ae6188a657902c1d96ffd20f94995",
+      "bytes": 366
+    },
+    {
+      "path": "build/attempt-1/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-1/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-1/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/host-tests.stdout",
+      "sha256": "1baf9b0e58bb42cb6f2372fad09018d4b8e33d70ad052e20603bf78838e8f93d",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-1/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-1/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-2/assets/adapter.js",
+      "sha256": "dca93fed516ffac14e93b8172cc5627b6661d0565991c394cb731fb186099328",
+      "bytes": 1002
+    },
+    {
+      "path": "build/attempt-2/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-2/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-2/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-2/build-report.json",
+      "sha256": "7e969d247566e70a4eaf887108a52c8c9d6cb379b71a433d4ac69e856e2ca273",
+      "bytes": 4528
+    },
+    {
+      "path": "build/attempt-2/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-2/elm-host",
+      "sha256": "c17cf7a98fe5f76448d8ad52848a7e55a79112ef2b8c41248932a1fc609f6218",
+      "bytes": 38504
+    },
+    {
+      "path": "build/attempt-2/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/elm-test-build.stdout",
+      "sha256": "47bb0ff6134c0e21fe3510d3b04f7b21135e655fb60e1c8416435061baaf46c1",
+      "bytes": 94
+    },
+    {
+      "path": "build/attempt-2/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-2/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-2/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-2/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-2/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/host-tests.stdout",
+      "sha256": "c1854870533e7ce2f8e72c37c4d64bffd918138fd65ce3a748ed791042c1022b",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-2/native/host.c",
+      "sha256": "7179f9cf8fd7e9917e8a39dbe26795de2baa07ced5e63f4baeb12c54d36f867e",
+      "bytes": 12315
+    },
+    {
+      "path": "build/attempt-2/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-2/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-2/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-2/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-2/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-2/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-2/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/attempt-3/assets/adapter.js",
+      "sha256": "dca93fed516ffac14e93b8172cc5627b6661d0565991c394cb731fb186099328",
+      "bytes": 1002
+    },
+    {
+      "path": "build/attempt-3/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-3/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-3/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-3/build-report.json",
+      "sha256": "efeec66741ed9e80efc6a90561bebfc7247c00100505c887bd716d81714746dc",
+      "bytes": 4528
+    },
+    {
+      "path": "build/attempt-3/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-3/elm-host",
+      "sha256": "c5d84b759287f63b0f47636564ace2f6141a072917f799c28ad43b2c5bb643d2",
+      "bytes": 38760
+    },
+    {
+      "path": "build/attempt-3/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/attempt-3/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-3/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-3/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-3/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-3/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/host-tests.stdout",
+      "sha256": "5c9ee757f3bbfc281a2115ccf6daeb50ee8f421a3eaf71fc101a54e664ab45e2",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-3/native/host.c",
+      "sha256": "cd942aa108594b9173bc36cecb8a9d43d1e1eeca4277e61db422ea261c425eb5",
+      "bytes": 12640
+    },
+    {
+      "path": "build/attempt-3/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-3/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-3/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-3/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-3/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-3/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-3/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/attempt-4/assets/adapter.js",
+      "sha256": "6ef706cbe24faf019587552470cf9a8fd4a95589930be822570c1e384a371197",
+      "bytes": 1157
+    },
+    {
+      "path": "build/attempt-4/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-4/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-4/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-4/build-report.json",
+      "sha256": "deffcdb76a11387f7ec465e3bcab06b6ddb6960012d6b73349547be690404dda",
+      "bytes": 4528
+    },
+    {
+      "path": "build/attempt-4/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-4/elm-host",
+      "sha256": "390a7c22afa1fcf40bacd75d75aec60a0f1bd361e13dbd237c83153339060516",
+      "bytes": 38848
+    },
+    {
+      "path": "build/attempt-4/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/attempt-4/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-4/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-4/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-4/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-4/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/host-tests.stdout",
+      "sha256": "b9d4d65e5d0ba3f6587eb5b3ac4822094e9c96d6d599937f68e428408671b4da",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-4/native/host.c",
+      "sha256": "2ee8534ae47a62576aa5b23f15711d5d2126b1490b8088decbca2657b1acc0be",
+      "bytes": 12773
+    },
+    {
+      "path": "build/attempt-4/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-4/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-4/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-4/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-4/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-4/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-4/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/attempt-5/adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/assets/adapter.js",
+      "sha256": "c2212f91b392d5ac9a73c043d241aebcb0dd92b49bb57e1a9853e8fac9f5dc6e",
+      "bytes": 1177
+    },
+    {
+      "path": "build/attempt-5/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-5/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-5/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-5/build-report.json",
+      "sha256": "6f491708b2ca61cf7ed8560d42d253f9b92c6d79ebb91963062758e9e60d76a5",
+      "bytes": 4684
+    },
+    {
+      "path": "build/attempt-5/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-5/elm-host",
+      "sha256": "390a7c22afa1fcf40bacd75d75aec60a0f1bd361e13dbd237c83153339060516",
+      "bytes": 38848
+    },
+    {
+      "path": "build/attempt-5/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/attempt-5/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-5/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-5/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-5/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-5/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/host-tests.stdout",
+      "sha256": "ea9f5fe36b3f59e8663054116cbf650c3096337b1f9b9f5b217cb5428fa74d05",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-5/native/host.c",
+      "sha256": "2ee8534ae47a62576aa5b23f15711d5d2126b1490b8088decbca2657b1acc0be",
+      "bytes": 12773
+    },
+    {
+      "path": "build/attempt-5/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-5/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-5/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-5/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-5/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-5/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-5/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/attempt-6/adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/assets/adapter.js",
+      "sha256": "12aaaacbff2dc6e65718a25ec63866c53b1a9b18b6a6ad03c0744cbbfde90ce8",
+      "bytes": 1239
+    },
+    {
+      "path": "build/attempt-6/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-6/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-6/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-6/build-report.json",
+      "sha256": "af27267e5df4e83c66d57c537c3717b987b8838d8a2e4424bd6b3fedb8b63e46",
+      "bytes": 4684
+    },
+    {
+      "path": "build/attempt-6/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-6/elm-host",
+      "sha256": "390a7c22afa1fcf40bacd75d75aec60a0f1bd361e13dbd237c83153339060516",
+      "bytes": 38848
+    },
+    {
+      "path": "build/attempt-6/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/attempt-6/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-6/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-6/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-6/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-6/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/host-tests.stdout",
+      "sha256": "5785a92ed3392f956fa8ce0755d4183b10ad1bc1fdc2f7fe25aab469ffc55e71",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-6/native/host.c",
+      "sha256": "2ee8534ae47a62576aa5b23f15711d5d2126b1490b8088decbca2657b1acc0be",
+      "bytes": 12773
+    },
+    {
+      "path": "build/attempt-6/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-6/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-6/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-6/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-6/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-6/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-6/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/attempt-7/adapter-syntax.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/adapter-syntax.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/assets/adapter.js",
+      "sha256": "12aaaacbff2dc6e65718a25ec63866c53b1a9b18b6a6ad03c0744cbbfde90ce8",
+      "bytes": 1239
+    },
+    {
+      "path": "build/attempt-7/assets/elm.js",
+      "sha256": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+      "bytes": 120265
+    },
+    {
+      "path": "build/attempt-7/assets/index.html",
+      "sha256": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+      "bytes": 541
+    },
+    {
+      "path": "build/attempt-7/assets/shell.css",
+      "sha256": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+      "bytes": 708
+    },
+    {
+      "path": "build/attempt-7/build-report.json",
+      "sha256": "0c018fd227f4b8dbc0cfd86ecd7abb528009712c85fb1d6a33f3ad1599ce870f",
+      "bytes": 4684
+    },
+    {
+      "path": "build/attempt-7/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/attempt-7/elm-host",
+      "sha256": "cec1411ae00250767f7fa3597c40acbe226a3fb7cf0aaa820c01472d6b5f9bf7",
+      "bytes": 38928
+    },
+    {
+      "path": "build/attempt-7/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/attempt-7/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/attempt-7/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/attempt-7/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/attempt-7/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/attempt-7/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/host-tests.stdout",
+      "sha256": "3e6f6792119074546cd65fb2af6de0ba35052687a05fba36b12f1d6f88af2e7f",
+      "bytes": 158
+    },
+    {
+      "path": "build/attempt-7/native/host.c",
+      "sha256": "882ad6c48397f9323a11cebe5d3ba6897891ce34f590520d29e4d51100c43510",
+      "bytes": 13739
+    },
+    {
+      "path": "build/attempt-7/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/attempt-7/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/attempt-7/src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "build/attempt-7/src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "build/attempt-7/src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "build/attempt-7/src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    },
+    {
+      "path": "build/attempt-7/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build/build-report.json",
+      "sha256": "5ff5286ddb00eb5e72bd5c93c023e79a5684857e5426e6668013da5a75b112cd",
+      "bytes": 4684
+    },
+    {
+      "path": "build/elm-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/elm-build.stdout",
+      "sha256": "b948e2bd6050fbe97d1b3171b63952dbaab791b95b1d7317f3b766c341efc081",
+      "bytes": 73
+    },
+    {
+      "path": "build/elm-host",
+      "sha256": "9c24a1dda1496cf1eaa9c473a7fd8c88b008a65bc9f4899c0024e7cb8c23ae48",
+      "bytes": 39168
+    },
+    {
+      "path": "build/elm-test-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/elm-test-build.stdout",
+      "sha256": "0d009666bc4d533868398dca96e9dd28cec7f8faed23ec203b04caa4e6944984",
+      "bytes": 75
+    },
+    {
+      "path": "build/elm-tests.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "bytes": 123
+    },
+    {
+      "path": "build/elm-tests.stdout",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "build/elm-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/elm-version.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+      "bytes": 7
+    },
+    {
+      "path": "build/flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/flags.stdout",
+      "sha256": "ef500f1a01ec52ee48bc58dc627d10a57f7c3ed0e40ed3ad5c4fcbcfbe846ad9",
+      "bytes": 935
+    },
+    {
+      "path": "build/host-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/host-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/host-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/host-tests.stdout",
+      "sha256": "fcc8894192d7770716b222d7093c73c03659f013d12c1743222e7bf57fead5eb",
+      "bytes": 158
+    },
+    {
+      "path": "build/native-versions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build/native-versions.stdout",
+      "sha256": "d0184380df5be144dabe113e1d6b0689a4f8c9c8b417a170b9723c5697547921",
+      "bytes": 29
+    },
+    {
+      "path": "build/tests.js",
+      "sha256": "800ebc19a3dc13653b5a36106d307dca91ffe65609f1819bd3efb2c5313b9219",
+      "bytes": 76059
+    },
+    {
+      "path": "build.py",
+      "sha256": "18e188063900bac4380d38fcc9322f0158119cd523d9ae86c74e791e177423ca",
+      "bytes": 2116
+    },
+    {
+      "path": "elm-stuff/0.19.2/Domain.elmi",
+      "sha256": "76bf0a45b5cc7c87d633ee0f53c56af130904bef0194fa7f1d1a5cc5cff09075",
+      "bytes": 1166
+    },
+    {
+      "path": "elm-stuff/0.19.2/Domain.elmo",
+      "sha256": "7d4f6be17970516762e4a1f3003da8e4dd2653f0626668fe0c130d9d20335bd8",
+      "bytes": 1418
+    },
+    {
+      "path": "elm-stuff/0.19.2/Main.elmi",
+      "sha256": "e1a3e03addc2a8ce230b2b932fe2667f8960f220cdcb1776622fddd638ff62e7",
+      "bytes": 233
+    },
+    {
+      "path": "elm-stuff/0.19.2/Main.elmo",
+      "sha256": "2d7aaae94422c4ffad06c6d7400bdbc1f1d7d4a48c3189700b35145fe7de83e2",
+      "bytes": 4771
+    },
+    {
+      "path": "elm-stuff/0.19.2/Protocol.elmi",
+      "sha256": "f9d50d72a2c838dccde87ea13936261b0280b75b2837205f3c67d2c55bee268f",
+      "bytes": 903
+    },
+    {
+      "path": "elm-stuff/0.19.2/Protocol.elmo",
+      "sha256": "e03fc05a572b8bf7ba7e97b26ef238a1e129d6b1308f9ff2bbdf71530424a29a",
+      "bytes": 5784
+    },
+    {
+      "path": "elm-stuff/0.19.2/Tests.elmi",
+      "sha256": "3f8a7d06fef0b38a58514f6c7acf94dfeba4c2f5715d141dd1833c5f93b4ea45",
+      "bytes": 112
+    },
+    {
+      "path": "elm-stuff/0.19.2/Tests.elmo",
+      "sha256": "7a768dfffa23b9463c099404178cb1b68b2c580c20c04351f913df38b7c38f33",
+      "bytes": 6989
+    },
+    {
+      "path": "elm-stuff/0.19.2/d.dat",
+      "sha256": "bfb17d2560a64488e4b9dcb1abc56897c29140d312c78a62c67680aa43e550dc",
+      "bytes": 1873
+    },
+    {
+      "path": "elm-stuff/0.19.2/i.dat",
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "bytes": 105328
+    },
+    {
+      "path": "elm-stuff/0.19.2/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "elm-stuff/0.19.2/o.dat",
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "bytes": 441107
+    },
+    {
+      "path": "elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "bytes": 306
+    },
+    {
+      "path": "native/host.c",
+      "sha256": "6d4bdf836db8ac382bcabc329e7f160ab86754d191bcfd49d926ae2b537bed32",
+      "bytes": 14040
+    },
+    {
+      "path": "qa/elm-test-results.json",
+      "sha256": "67e0e56f8c9c90b6e91c53814c8a037eaa7df2a785523950d52fbd4cc1b17eba",
+      "bytes": 1191
+    },
+    {
+      "path": "qa/elm_tests.cjs",
+      "sha256": "c2d3d13a6839b900bb6644a700d15305377602d5afc318ca4b2b66405e935b7f",
+      "bytes": 607
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/cycles-validator.py",
+      "sha256": "9123cbf66b5381be5f238125a5d6df7a21f199faf5e542815bdeecfeb672d7a5",
+      "bytes": 2407
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/cycles.stderr",
+      "sha256": "a4feaa00905f2aa50c09c909f003c0a5e0b84df9b4648a1481575a8131d699a7",
+      "bytes": 1524
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/cycles.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/plan-validation.json",
+      "sha256": "d0e36654c88c27a6e7322e71eaa1c40d78d9c47272e87a3086682c55b88b1d76",
+      "bytes": 1276
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/plan-validator.py",
+      "sha256": "665815638b1ee466a8d01f5e7ba02570c97d4d4b869f9754285c71ae82b5e8bb",
+      "bytes": 5185
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/plan.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/plan.stdout",
+      "sha256": "d0e36654c88c27a6e7322e71eaa1c40d78d9c47272e87a3086682c55b88b1d76",
+      "bytes": 1276
+    },
+    {
+      "path": "qa/final-pass-20261003T162515/report.json",
+      "sha256": "f2af034cbcf5bfbdbc55959246a193806e585a92e01890b5144ee9b4c4c2cd70",
+      "bytes": 3058
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/bridge-invariants.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/bridge-invariants.stdout",
+      "sha256": "e68ca78514cf9b47dba60aa4adc5a043c8339af12e17ed7f1e298c986362043e",
+      "bytes": 20943
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/bridge-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/bridge-tests.stdout",
+      "sha256": "27415671b980760d46233bd25e0430fca4351cabfd475537a23f3e6ffbd1bc11",
+      "bytes": 843
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/cycle-validation.json",
+      "sha256": "095072f0359d9955e437027f460e8ee54e68fc6ebde3577f7ac3deff247eff54",
+      "bytes": 1119
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/cycles-validator.py",
+      "sha256": "a87eeb6f08b8d252607535da021f7312ff4d0178519fde25eadf8444f3022638",
+      "bytes": 2425
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/cycles.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/cycles.stdout",
+      "sha256": "095072f0359d9955e437027f460e8ee54e68fc6ebde3577f7ac3deff247eff54",
+      "bytes": 1119
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/plan-validation.json",
+      "sha256": "3c6269f87781fdda100cf76d48b74660fd697faeb5c748b118c4812f4041be7c",
+      "bytes": 1276
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/plan-validator.py",
+      "sha256": "6bd9eb22128d8736ffaa56dd00ebe5da2d951e31389e26eccf1ee864c182c3a4",
+      "bytes": 5185
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/plan.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/plan.stdout",
+      "sha256": "3c6269f87781fdda100cf76d48b74660fd697faeb5c748b118c4812f4041be7c",
+      "bytes": 1276
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/quint-version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/quint-version.stdout",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "bytes": 7
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/report.json",
+      "sha256": "9b9c2554fce2fbc5c791908496402423e06786ae8ba452b70aa4145f1c161533",
+      "bytes": 3413
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/scene-invariants.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/scene-invariants.stdout",
+      "sha256": "6dd37194d00744f327539193939aa84a7f53b7a80a23d4e87a13a552f3d34dbc",
+      "bytes": 12820
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/scene-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/final-pass-20261003T162547/scene-tests.stdout",
+      "sha256": "eb6e4e307791bea1fbed6b0f77e153cc1869f19404615539d040396a02abb34e",
+      "bytes": 606
+    },
+    {
+      "path": "qa/final_pass.py",
+      "sha256": "c899bc603cb09fba717f98a4af1ba240dacc308a11448056ed89a0d64173dcfc",
+      "bytes": 3065
+    },
+    {
+      "path": "qa/freeze_slice.py",
+      "sha256": "2e51a70849d5f18c2f253259511a1faad71507f04f401e7e16bbeaab9c26cda4",
+      "bytes": 2424
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "bytes": 174
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/elm-fixture.log",
+      "sha256": "4196d419dcb863851d1ce92a59fa5c0468d9b0713f3146a2e2c8dfed208dcfe1",
+      "bytes": 490
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/host-evidence.json",
+      "sha256": "e0d591dbf82fc6122399bf568f9caafa71922d4de56a59b3a50b99d3b68c91a4",
+      "bytes": 211008
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/hyprland.log",
+      "sha256": "b120cfd686a4a0242af4e3e58d58a9b783c7f939619dea339a56b90fe7c5110b",
+      "bytes": 2616
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/privateBus.log",
+      "sha256": "127ea17c1347539b524e1a14e8f96c5c61f0349b4d107d9a69267392af5a8de0",
+      "bytes": 5523
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/runtime-archive/.flatpak/webkit-878550-12/bwrapinfo.json",
+      "sha256": "4f9009b8f517f38b39b780fad0c6585e012a61b46530dd1ecffcc39860bee4dd",
+      "bytes": 160
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/runtime-archive/.flatpak/webkit-878550-4/bwrapinfo.json",
+      "sha256": "0b7f5a8b212a4d765572fc91242bff1157805ae31f35160fc11da75d098dd5fd",
+      "bytes": 193
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791045025_2104944990/hyprland.log",
+      "sha256": "54df889bf59d45b56994e98ef368c43d598e0aed500179b57a0a7a62c22e81d3",
+      "bytes": 24339
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "bytes": 241
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/weston-renderer.log",
+      "sha256": "0aa9e656b37c6d4fb8536d4b9a36ddf5ecda0da6b9222f1751c93d67fac4602f",
+      "bytes": 3466
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045024895515423/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/diagnostic.png",
+      "sha256": "34ad68ecf77fe490895dfa22d501a5d5d365be2c9219c58ff8c5fba6011faabd",
+      "bytes": 42308
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "bytes": 174
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/elm-fixture.log",
+      "sha256": "0a6013045c723cb3075a1ced856dbbb9f2cb7c2e5e7edd4b35c4009d30b1cdb7",
+      "bytes": 382
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/host-evidence.json",
+      "sha256": "9059cad8ab3f55a091ea076c2ab26cae13e2773245460cbe568c4ee16409a405",
+      "bytes": 210601
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/hyprland.log",
+      "sha256": "b024a09afdc9fc925be74b69df48c3248b7bf34d520a3b86c4f67b5525aa43c8",
+      "bytes": 2616
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/privateBus.log",
+      "sha256": "dfd9518ff03d092aa6f57f6d0d53e8148d80fafccefc2a0406304d4c3c6676db",
+      "bytes": 5523
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/runtime-archive/.flatpak/webkit-897456-12/bwrapinfo.json",
+      "sha256": "510d00514b3947c4342a3bfd9c46611f315881db7fa37f982ecbb9faf785e1b1",
+      "bytes": 160
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/runtime-archive/.flatpak/webkit-897456-4/bwrapinfo.json",
+      "sha256": "52d3e9cbac268635967c012f437d40be65310b679ccc6fff1416bdf7471d1733",
+      "bytes": 193
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791045288_1786197679/hyprland.log",
+      "sha256": "1a071baa3755378513759303ec046dcac3b9eaed8bb06852035e74dfd9e4c48b",
+      "bytes": 24339
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "bytes": 241
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/weston-renderer.log",
+      "sha256": "a1c73e5660a9091147bc9344a47cb3d000801e235a424c42a309c77966e78c44",
+      "bytes": 3466
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045287518976674/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "bytes": 174
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/elm-fixture.log",
+      "sha256": "fc96b1fb698593a0ffb318dc0ef2e1e078563125f84e7f3d4f12b9e64c0f4a1b",
+      "bytes": 496
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/elm-fixture.png",
+      "sha256": "48147ddea9b343e81b38b24eba27252b47a88ff4febfded524c6caabcf647f06",
+      "bytes": 87317
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/host-evidence.json",
+      "sha256": "668a945e3b6b728d42cceb7b20e390d5733e1acf6d9b8d074b36a316f60a47ac",
+      "bytes": 210110
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/hyprland.log",
+      "sha256": "0162b6d45f716596fc72a7813260a8b3a67f00b5d289045720b5d7bad143943d",
+      "bytes": 2615
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/privateBus.log",
+      "sha256": "151eeb0e2706f1706f53f3cdfe8de4090dbe9a8bfca3bdf8b7b36c7b67af1fa6",
+      "bytes": 5523
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/runtime-archive/.flatpak/webkit-908529-12/bwrapinfo.json",
+      "sha256": "4498b207bcf9bc4f8b67dad3f506555c1642b73cacb819b86612da02ff3e93fe",
+      "bytes": 160
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/runtime-archive/.flatpak/webkit-908529-4/bwrapinfo.json",
+      "sha256": "1659a3e6a4b55ce1c4e647aba6b0147a27748a32d5bd48381044493a22ad7c44",
+      "bytes": 193
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791045484_233864353/hyprland.log",
+      "sha256": "b8423c9bcd6cb7c12868e6ca965d84000f575357fbc90aade20abd1ecf57ca63",
+      "bytes": 24338
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "bytes": 241
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/weston-renderer.log",
+      "sha256": "0998ce2750738229138ba8aaa40dd7fd799659c2a66a78a8f0bfca979fa65fb5",
+      "bytes": 3466
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045483268721641/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/diagnostic.png",
+      "sha256": "5dbd35f3ed4d04fbc6da2b58e6c5585f9f19106669042949403a0a2efd909646",
+      "bytes": 696038
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "bytes": 174
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/elm-fixture.log",
+      "sha256": "6b7e5b8596f7aa32e64092a16cf5278c6a66b4e7ac84e8a8477f91872f5c1c3e",
+      "bytes": 496
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/host-evidence.json",
+      "sha256": "6f19551581d57190b879b46c5cd4033db5d6df82196659d06709c3f2f6741a7f",
+      "bytes": 210827
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/hyprland.log",
+      "sha256": "ffdca397246e29c59ac69ab2bccbed52e451c9aab500bae8682bc08d7a2671ca",
+      "bytes": 2616
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/privateBus.log",
+      "sha256": "0be15fa8a3f09666104deb57243f1129c834b93b4ea44afcc755321d3fabc9f5",
+      "bytes": 5523
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/runtime-archive/.flatpak/webkit-912139-12/bwrapinfo.json",
+      "sha256": "165fd82ecc3f0131874a1e52ac575325502c2569f9a98fd6086a9fe026ce60af",
+      "bytes": 160
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/runtime-archive/.flatpak/webkit-912139-4/bwrapinfo.json",
+      "sha256": "83b5384dfd7c2f1078e90e437e2e4b5bb84d46a8cfdf1f7df3c569efc9c40a4c",
+      "bytes": 193
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791045542_1947065318/hyprland.log",
+      "sha256": "2bf2e153182d602e3dd1b870694262b8087afb99850e8e9a581460308e442ed5",
+      "bytes": 24339
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "bytes": 241
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/weston-renderer.log",
+      "sha256": "a54c905e0212ab714958e009a87049b9a39baf217c402c038d3c8b36659e2199",
+      "bytes": 3466
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045541885645413/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "bytes": 174
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/elm-fixture.log",
+      "sha256": "f18afadc0863b4c2678fb0e95598404ae6d0154b476f18e9744d18b9d78f4524",
+      "bytes": 496
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/elm-fixture.png",
+      "sha256": "f19f14759982b1b6104babd196647b7780f63b3da30cff70648752fae47e1a99",
+      "bytes": 49920
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/host-evidence.json",
+      "sha256": "c92d30e289f4ad55c43b139be8373b2fe35229b551f3e472d380d82b1fdca234",
+      "bytes": 210189
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/hyprland.log",
+      "sha256": "474f809bc4e55e686d23a13030a30c90f409a4c41338c60c52387c034be76852",
+      "bytes": 2616
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/privateBus.log",
+      "sha256": "33c48788a6dfc93e39e2079298787ff9fbbfb0c830346228481fcd3c71700f89",
+      "bytes": 5523
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/runtime-archive/.flatpak/webkit-931631-12/bwrapinfo.json",
+      "sha256": "d8e03e2b1a1e9a663e9726f77d0b5cd5d002335c41f58d1434c76bdebc187445",
+      "bytes": 160
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/runtime-archive/.flatpak/webkit-931631-4/bwrapinfo.json",
+      "sha256": "8fb57f63de51a6b2123384c1c2a60a7ab47ba9e0d84e0d55db7c8ca75aa908d4",
+      "bytes": 193
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791045795_1692818926/hyprland.log",
+      "sha256": "ee612176df9cf616b9831d138deaf9695aea0428a4272bf2b061f8cd64eba0cd",
+      "bytes": 24339
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "bytes": 241
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/weston-renderer.log",
+      "sha256": "93bc583d905338fe20dd87a7434554fd856e47a6b436d529f8c297d5f33a7bc0",
+      "bytes": 3466
+    },
+    {
+      "path": "qa/native-evidence/elm-fixture-host-1791045794585511899/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "qa/native-smoke-1791045024895518617.json",
+      "sha256": "1a8ef6c94e4b469fb74c6e3f81434a4cc613d6d42b24412984ff338120d74abe",
+      "bytes": 214032
+    },
+    {
+      "path": "qa/native-smoke-1791045287518980500.json",
+      "sha256": "01e13353345d2e76a1e7c727c6d165fcea942e22786ee7243246d0c422d7e0f3",
+      "bytes": 213541
+    },
+    {
+      "path": "qa/native-smoke-1791045483268726174.json",
+      "sha256": "e8a1f3a0b22055fc2ee4835b1a39f31e3ebe62d4c60a965145888f31819684c5",
+      "bytes": 215273
+    },
+    {
+      "path": "qa/native-smoke-1791045541885650653.json",
+      "sha256": "e5592ed8d99b3d0932182a7173956e5145581a1e1f32a4697be6deed54500fcc",
+      "bytes": 214358
+    },
+    {
+      "path": "qa/native-smoke-1791045794585516607.json",
+      "sha256": "0654796b91cbcd285630036cf847688b07153e6aecb742aa6a9c712e6e754203",
+      "bytes": 215613
+    },
+    {
+      "path": "qa/native_smoke.py",
+      "sha256": "ee220900aafdb0e4fde0767237fe46844942b20200cc5d6c23e11ed0429b1206",
+      "bytes": 4622
+    },
+    {
+      "path": "src/Domain.elm",
+      "sha256": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+      "bytes": 1081
+    },
+    {
+      "path": "src/Main.elm",
+      "sha256": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+      "bytes": 2443
+    },
+    {
+      "path": "src/Protocol.elm",
+      "sha256": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+      "bytes": 2674
+    },
+    {
+      "path": "src/Tests.elm",
+      "sha256": "66cc1fcc0c7fb67fc7cac93142de5975b7d39f1d0f70dc424fd81b9c80f1bfee",
+      "bytes": 3413
+    }
+  ]
+}

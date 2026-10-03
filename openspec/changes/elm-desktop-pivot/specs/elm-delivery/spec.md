@@ -14,13 +14,13 @@ The release plan SHALL preserve baseline source hashes, scenario identities, fai
 
 ### Requirement: ELM-DEL-002
 
-The release plan SHALL assign an owner, engineer-week range, dependencies and acceptance evidence to each mandatory phase and separately estimate optional compositor work.
+The release plan SHALL assign an accountable role, dependencies, runnable deliverables and acceptance evidence to each outcome-driven build cycle and keep optional compositor work separately gated.
 
 #### Scenario: ELM-DEL-002 delivery-002
 
-- GIVEN a release plan
-- WHEN estimates are reviewed
-- THEN P0–P6 and P7–P8 have separate costs and dependencies
+- GIVEN an outcome-driven release plan
+- WHEN cycle readiness and completion are reviewed
+- THEN mandatory shell and optional compositor work have separate dependencies and gates, and progression depends on accepted results rather than elapsed time
 
 ### Requirement: ELM-DEL-003
 

@@ -1,0 +1,9 @@
+host-start: layer=1 sandbox=1 acceleration-policy=always fixture-only=1
+fixture-snapshot-delivered
+
+** (process:2): WARNING **: 10:30:27.075: Failed to get atspi registered event listeners: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+QA render report deadline expired
+
+(elm-host:878550): GLib-CRITICAL **: 10:30:42.252: Source ID 59 was not found when attempting to remove it
+host-exit: failure=1 rendered=0

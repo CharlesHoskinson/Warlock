@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/qa/final-pass-20261003T162515/cycles-validator.py", line 29, in <module>
+    result=dict(observedUTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='Sprint plan traceability, dependency and outcome-driven execution; not story estimates or implementation acceptance',requirements=len(byid),acceptanceScenarios=sum(len(x['acceptanceScenarioIds']) for x in p['backlog']),mandatorySlots=16,conditionalSlots=7,passed=True,files=[dict(path=str(f.relative_to(root)),sha256=sha(f)) for f in [root/'requirements.json',root/'SPRINTS.md',root/'ROADMAP.md',root/'delivery/sprint-backlog.json',Path(__file__),root/'tools/build_sprints.py']])
+                                                                                                                                                                                                                                                                                                                                                                                             ~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 490, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: '/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/qa/final-pass-20261003T162515/cycles-validator.py' is not in the subpath of '/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap'

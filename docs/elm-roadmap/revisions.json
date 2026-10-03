@@ -1232,6 +1232,19 @@
           "then": "zero text writes and zero shell effects occur"
         }
       ]
+    },
+    "ELM-DEL-002": {
+      "ears": "The release plan SHALL assign an accountable role, dependencies, runnable deliverables and acceptance evidence to each outcome-driven build cycle and keep optional compositor work separately gated.",
+      "verification": "Review cycle coverage, dependencies and independently accepted evidence without calendar or staffing forecasts.",
+      "task": "Maintain outcome-driven build cycles, dependency decisions and acceptance gates.",
+      "scenarios": [
+        {
+          "name": "delivery-002",
+          "given": "an outcome-driven release plan",
+          "when": "cycle readiness and completion are reviewed",
+          "then": "mandatory shell and optional compositor work have separate dependencies and gates, and progression depends on accepted results rather than elapsed time"
+        }
+      ]
     }
   }
 }

@@ -858,18 +858,18 @@
       "id": "ELM-DEL-002",
       "capability": "elm-delivery",
       "pattern": "ubiquitous",
-      "ears": "The release plan SHALL assign an owner, engineer-week range, dependencies and acceptance evidence to each mandatory phase and separately estimate optional compositor work.",
+      "ears": "The release plan SHALL assign an accountable role, dependencies, runnable deliverables and acceptance evidence to each outcome-driven build cycle and keep optional compositor work separately gated.",
       "phase": "P0",
       "priority": "must",
-      "verification": "Review phase ledger against staffed capacity and dependency graph.",
+      "verification": "Review cycle coverage, dependencies and independently accepted evidence without calendar or staffing forecasts.",
       "legacyEvidence": "docs/elm-roadmap/ROADMAP.md",
-      "task": "Maintain staffing, contingency and critical-path estimates.",
+      "task": "Maintain outcome-driven build cycles, dependency decisions and acceptance gates.",
       "scenarios": [
         {
           "name": "delivery-002",
-          "given": "a release plan",
-          "when": "estimates are reviewed",
-          "then": "P0\u2013P6 and P7\u2013P8 have separate costs and dependencies"
+          "given": "an outcome-driven release plan",
+          "when": "cycle readiness and completion are reviewed",
+          "then": "mandatory shell and optional compositor work have separate dependencies and gates, and progression depends on accepted results rather than elapsed time"
         }
       ],
       "source": "docs/elm-roadmap/contributions/delivery.json",

@@ -1,0 +1,149 @@
+{
+  "scope": "Build and CPU checks only; native/GPU acceptance separate",
+  "observedUTC": "2026-10-03T16:23:38.698880+00:00",
+  "passed": true,
+  "versions": [
+    "3.24.52",
+    "2.52.6",
+    "0.10.1",
+    "1.10.8"
+  ],
+  "elmVersion": "0.19.2",
+  "commands": [
+    {
+      "name": "native-versions",
+      "command": [
+        "pkg-config",
+        "--modversion",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-version",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--output=assets/elm.js",
+        "--optimize"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "-O2",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/build/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/build/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "files": {
+    "src/Protocol.elm": "06b540e2ee5f44f38cc9e1526e759dc671f72aa5e6c77af316690f1b59c4225b",
+    "src/Domain.elm": "56762291137c04347da13bde8a9192be899f34e20a5ce1da6152a7331319a871",
+    "src/Main.elm": "424aa7f86abe7ee5fbdf550326fe5844a5a60b59aa292a1272dad87fcc6593ea",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "dca93fed516ffac14e93b8172cc5627b6661d0565991c394cb731fb186099328",
+    "assets/elm.js": "f53b700ab540e78618f280e69a1caaed41d7ce97fa368088f95e95d3b51d02b0",
+    "native/host.c": "7179f9cf8fd7e9917e8a39dbe26795de2baa07ced5e63f4baeb12c54d36f867e"
+  }
+}

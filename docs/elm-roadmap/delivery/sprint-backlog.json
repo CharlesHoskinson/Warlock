@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "requirementsSHA256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
   "baselineCommit": "d99d677",
   "executionMode": "AI-assisted outcome-driven build cycles",
   "advanceWhen": "Required checks and exit gate pass; otherwise fix or record the blocker.",
@@ -1153,13 +1153,13 @@
       "sprint": "S01",
       "phase": "P0",
       "capability": "elm-delivery",
-      "title": "Maintain staffing, contingency and critical-path estimates.",
+      "title": "Maintain outcome-driven build cycles, dependency decisions and acceptance gates.",
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
       "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
-      "verification": "Review phase ledger against staffed capacity and dependency graph.",
+      "verification": "Review cycle coverage, dependencies and independently accepted evidence without calendar or staffing forecasts.",
       "acceptanceScenarioIds": [
         "ELM-DEL-002 delivery-002"
       ]

@@ -1,0 +1,99 @@
+{
+  "scope": "Current contract format and unchanged architecture model checks; no native implementation acceptance",
+  "passed": true,
+  "commands": [
+    {
+      "name": "plan",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/qa/final-pass-20261003T162547/plan-validator.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cycles",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-v1/qa/final-pass-20261003T162547/cycles-validator.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scene-tests",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene_tests.qnt",
+        "--main=scene_tests",
+        "--match=^(minimizedFullscreenExcludedTest|inactivePinnedExcludedTest|maximizedStaysOrdinaryTest|pinnedAboveFullscreenPolicyTest|transparentPaintInputDivergenceTest|inertRestoreProxyTest|atomicLiveHandoffTest|prematureHandoffRefusedTest|lockRevokesPublicationTest|gpuLossRevokesLeaseTest|lockCancelsRestoreProxyTest)$",
+        "--max-samples=1",
+        "--seed=610203"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scene-invariants",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene_model.qnt",
+        "--main=scene",
+        "--invariants",
+        "noExcludedPaint",
+        "noExcludedInput",
+        "focusSafe",
+        "proxyInert",
+        "leaseValid",
+        "proxyValid",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=610204"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bridge-tests",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/bridge.qnt",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=610205"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bridge-invariants",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/bridge.qnt",
+        "--invariant=safety",
+        "--max-samples=2000",
+        "--max-steps=40",
+        "--seed=610206"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputSHA256": {
+    "docs/elm-roadmap/requirements.json": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "docs/elm-roadmap/ARCHITECTURE.md": "5d01c701e0786e310d4a2b4513e41bfc472e3caa323392baf62955cf6d68c4de",
+    "docs/elm-roadmap/SPRINTS.md": "e2660ccf292a218b2410ff8d9cd519cf80d5dcf0ada0eccb264ed28d6e2c28d7",
+    "docs/elm-roadmap/delivery/execution-policy-amendment.json": "ef12c489d9a55b12b2a4af36251df98b5d2a81ae5b985fc9d6ca837f4fed0e2b",
+    "docs/elm-roadmap/prototypes/quint/scene_model.qnt": "2be6b91af90a89173ab45b6dc26e9aca693facac3eac9e8e54ffc10757161281",
+    "docs/elm-roadmap/prototypes/quint/scene_tests.qnt": "7411a39acc4a7aff50ee1a16d629e9fb3b6216d2388d052e5bb34c6cf4d94a38",
+    "docs/elm-roadmap/prototypes/quint/bridge/bridge.qnt": "296babe1c944b3879be839a4fc11fbff008d7f2f8ccc7e7bc08a20352dd231cd"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scope": "Real Domain/Protocol pure Elm CPU checks",
+  "passed": true,
+  "results": [
+    {
+      "name": "fixture-decodes-with-lossless-identities",
+      "passed": true
+    },
+    {
+      "name": "observations-do-not-emit-effects",
+      "passed": true
+    },
+    {
+      "name": "malformed-preserves-observations",
+      "passed": true
+    },
+    {
+      "name": "unsupported-version-refused",
+      "passed": true
+    },
+    {
+      "name": "numeric-identity-refused",
+      "passed": true
+    },
+    {
+      "name": "noncanonical-zero-refused",
+      "passed": true
+    },
+    {
+      "name": "negative-identity-refused",
+      "passed": true
+    },
+    {
+      "name": "u64-overflow-refused",
+      "passed": true
+    },
+    {
+      "name": "u64-maximum-decodes",
+      "passed": true
+    },
+    {
+      "name": "duplicate-incarnation-refused",
+      "passed": true
+    },
+    {
+      "name": "production-observation-refused",
+      "passed": true
+    },
+    {
+      "name": "unrecognized-kind-refused",
+      "passed": true
+    },
+    {
+      "name": "refresh-is-read-only",
+      "passed": true
+    },
+    {
+      "name": "deterministic-replay",
+      "passed": true
+    }
+  ]
+}

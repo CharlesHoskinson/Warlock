@@ -1,0 +1,27 @@
+{
+  "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "activeSlice": "implementation/elm-shell-v1",
+  "status": "fixture-only host slice implemented; production gates pending",
+  "requirementsInProgress": [
+    "ELM-ARC-002",
+    "ELM-ARC-003",
+    "ELM-ARC-004",
+    "ELM-ARC-021",
+    "ELM-ARC-022",
+    "ELM-TEA-001",
+    "ELM-TEA-002",
+    "ELM-TEA-005"
+  ],
+  "completedRequirementIds": [],
+  "observedResults": {
+    "elmChecks": 14,
+    "nativeHostTestGroups": 2,
+    "nativeSurfaceCases": [
+      "xdg",
+      "layer"
+    ],
+    "architectureQuintNamedTests": 29,
+    "architectureSampledTraces": 3000
+  },
+  "next": "Authenticated coherent read-only observations, actual GPU/budget probes and native input/IME/AT qualification before effect admission."
+}

@@ -1,6 +1,6 @@
 # Build cycles
 
-Baseline: `c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146` (242 requirements, 417 scenarios). The [backlog](delivery/sprint-backlog.json) preserves each requirement, owner and acceptance scenario. S01–S16 are work packages; each is implemented through small runnable slices.
+Baseline: `a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b` (242 requirements, 417 scenarios). The [backlog](delivery/sprint-backlog.json) preserves each requirement, owner and acceptance scenario. S01–S16 are work packages; each is implemented through small runnable slices.
 
 ## Build loop
 
@@ -68,7 +68,7 @@ Demo: show the stated behavior or experiment outcome with matching acceptance re
 
 - [ ] **ELM-ARC-001** — Create a frozen architecture baseline manifest. Owner: Native host lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
 - [ ] **ELM-DEL-001** — Freeze the migration ledger and map each inherited case. Owner: Release integration lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
-- [ ] **ELM-DEL-002** — Maintain staffing, contingency and critical-path estimates. Owner: Release integration lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
+- [ ] **ELM-DEL-002** — Maintain outcome-driven build cycles, dependency decisions and acceptance gates. Owner: Release integration lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
 - [ ] **ELM-QA-001** — Freeze inherited evidence and derivative lineage. Owner: Verification lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
 - [ ] **ELM-QA-002** — Recover exact campaign manifests and record one-to-one mappings. Owner: Verification lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
 - [ ] **ELM-QA-016** — Validate complete traceability and reconcile independent audits. Owner: Verification lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.

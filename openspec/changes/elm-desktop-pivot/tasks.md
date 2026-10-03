@@ -8,7 +8,7 @@ Completion requires each requirement’s specified verification and source-bound
 
 - [ ] P0-ELM-ARC-001: Create a frozen architecture baseline manifest. Verify: Preserved scenario report with native or bridge trace showing: the report identifies every participating artifact; artifact hashes and matching scenario receipts included.
 - [ ] P0-ELM-DEL-001: Freeze the migration ledger and map each inherited case. Verify: Diff archived hashes and inspect all inherited case mappings.
-- [ ] P0-ELM-DEL-002: Maintain staffing, contingency and critical-path estimates. Verify: Review phase ledger against staffed capacity and dependency graph.
+- [ ] P0-ELM-DEL-002: Maintain outcome-driven build cycles, dependency decisions and acceptance gates. Verify: Review cycle coverage, dependencies and independently accepted evidence without calendar or staffing forecasts.
 - [ ] P0-ELM-GNO-001: Freeze the Windows product scene-policy table. Verify: Frozen scene/model trace plus native paint and input receipts proving: their precedence and eligibility are explicitly recorded. Retain scenario identity and source/ABI hashes.
 - [ ] P0-ELM-GPU-002: Create acceleration evidence categories. Verify: Evidence ledger with four separate verdicts linked to executed probes.
 - [ ] P0-ELM-QA-001: Freeze inherited evidence and derivative lineage. Verify: Compare archived SHA-256 manifests before and after; derivative manifest links every ancestor.
