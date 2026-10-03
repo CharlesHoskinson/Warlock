@@ -1,0 +1,7 @@
+host-start: layer=1 sandbox=1 acceleration-policy=always read-only-authority=1
+
+** (process:2): WARNING **: 12:09:57.451: Failed to get atspi registered event listeners: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+render-report: {"protocolVersion":3,"kind":"render-report","body":{"windows":1,"fixturePresent":true,"actionsDisabled":true,"secureContext":true,"gpu":{"webgpuExposed":false,"webglAvailable":true,"vendor":"Apple Inc.","renderer":"Apple GPU","pixel":[0,255,255,255],"error":0}}}
+backend-exit: waited=1 normal=1 code=0
+host-exit: failure=0 rendered=1

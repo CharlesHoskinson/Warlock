@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-authority-v3",
-  "status": "Fixture host, reliable pure Elm policy and isolated native read-only authority implemented; webview integration, native effects and production gates pending",
+  "activeSlice": "implementation/elm-webview-v4",
+  "status": "Event-driven native projection rendered in Elm webview; isolated Intel/Mesa hardware graphics observed; complete scene/effects, host selection and production gates pending",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -14,7 +14,12 @@
     "ELM-ARC-010",
     "ELM-REV-008",
     "ELM-ARC-026",
-    "ELM-DEL-010"
+    "ELM-DEL-010",
+    "ELM-DEL-026",
+    "ELM-GPU-001",
+    "ELM-GPU-002",
+    "ELM-GPU-004",
+    "ELM-QA-024"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -50,7 +55,40 @@
       "evidence": "implementation/elm-authority-v3/qa/slice-manifest.json",
       "nativeEffectCapabilities": false,
       "minimizedStateCapability": false
+    },
+    "webviewV4": {
+      "eventDrivenUnmapRemap": {
+        "passed": true,
+        "oldIncarnation": "1",
+        "newIncarnation": "2"
+      },
+      "normalHostAndBackendExit": true,
+      "webglReadbackPassed": true,
+      "canvasPresentedPassed": true,
+      "hardwareGraphicsAvailableObserved": true,
+      "webgpuExposed": false,
+      "nativeGraphicsInfo": {
+        "GL_RENDERER": [
+          "Mesa Intel(R) Graphics (ARL)",
+          "Mesa Intel(R) Graphics (ARL)"
+        ],
+        "GL_VENDOR": [
+          "Intel",
+          "Intel"
+        ],
+        "DRM Render Node": [
+          "/dev/dri/renderD129"
+        ],
+        "2D canvas": [
+          "Accelerated"
+        ],
+        "Renderer": [
+          "DMABuf (Supported buffers: Hardware, Shared Memory)"
+        ]
+      },
+      "evidence": "implementation/elm-webview-v4/qa/slice-manifest.json",
+      "scope": "Event-driven native-to-Elm DOM and isolated Intel/Mesa hardware graphics availability; all full implementation/release gates remain open"
     }
   },
-  "next": "Wire verified read-only native observations into the actual webview host; measure hardware GPU rendering and budgets; recover unchanged campaign oracles and qualify input/IME/AT before full canonical scene and guarded native effects."
+  "next": "Recover S01 unchanged native campaign oracles and S02 product budgets; compare/qualify hosts including input/IME/AT; extend native projection into the complete canonical scene and guarded effects for actual layering/focus/minimize repair."
 }

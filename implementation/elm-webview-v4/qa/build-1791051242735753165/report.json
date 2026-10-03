@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Observation.elm": "4e9cf8b7f3554ad36e2e914e62c392b07e564fba43d9a17e05345687c1c1239c",
+    "src/Observer.elm": "03d04b9cb4bab5747d34905217ce58b31d042455c677062585ffb54613a7b29c",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/Main.elm": "8857054bdad7a68ba2987cd2e78fdbb6ccbd4c4790347758f654ef7bab8d38f6",
+    "native/host.c": "2cf53b4df501ce553f108315ae5d033e6ac086607d9b1d9a94191b37f495470b",
+    "adapter/endpoint.py": "6df1a0d9a417567db8496fbebeb8d6c6a04d322aba48c6cabe1b61a682113a7f",
+    "adapter/daemon.py": "b4210542a655f1a33868abe0c09f2a67f1b915d08f6c31f52f623df2c61d2baf",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "b679d6744ec5c2ea3962dc660deb1d8339b0981751f61e145e5349731e526186",
+    "qa/build.py": "4cbf2e81263422e0e985ebcd7c9c3c9a2104a480c6d5e2b943281394549f641e",
+    "qa/native.py": "b96ec4445ef4d79d43f746ed445317484a5d9d13a2b23d8fc273b9f2953cc1ca"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-webview-v4/qa/build-1791051242735753165/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-webview-v4/qa/build-1791051242735753165/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "919ce3eff7464940b81f8d7d1fb0308697e2fdb5eb175c57c85994a2913f7af9"
+}

@@ -1,0 +1,6 @@
+:root { color-scheme: dark; font: 16px system-ui,sans-serif; background:#172029; color:#edf5ff; }
+body { margin:0; } .shell { padding:24px; max-width:700px; } h1 { margin-top:0; } .scope,.state { color:#b8cce0; }
+button { background:#27415b; color:#fff; border:1px solid #93b6d8; border-radius:6px; padding:9px 12px; font:inherit; }
+button:focus-visible { outline:3px solid #ffe17d; outline-offset:3px; } button:disabled { background:#25303a; color:#b9c3cf; border-color:#66788a; }
+.families { list-style:none; padding:0; } .families li { display:flex; flex-wrap:wrap; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid #587089; }
+.state { flex:1; } #connection-status { min-height:3em; }
