@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-03T19:50:01.766364+00:00",
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Effects.elm": "e5b85f5366386ed31ed4f85da4fbd5b8896563608fd91f7ad0e044db6f5bcd1f",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Scene.elm": "1f8e6420c41f53f53b68d8dc36b8e7223ead19b7856f003eaa1d2a5130cbdbf4",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/run.py": "1abb897b18386cc11c33ecbe8475e4215708f0b1ce3c829ec6c06375f7dfb99b",
+    "qa/check.cjs": "57c5b41acec3c3136e270ea2f5dfa341f688bfff8ba7ba19bbb868a43d353c00",
+    "qa/conformance.cjs": "c4bf1d0be0b6e0ef32d873c54d13441971a3b974bf2b5d44a1b2fa966f35bed7",
+    "spec/effects.qnt": "16b87e85cd0c2c1cc5c1a18d97b0f89b086159aed12d03cd46c2c9dbbc483f93"
+  },
+  "scope": "Compiled pure Elm first-class minimize/restore intent/receipt prototype; no native effects, first-class native minimized state, complete policy or product acceptance",
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057001765401154/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-effects",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "spec/effects.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-tests",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "spec/effects.qnt",
+        "--match",
+        "Test$",
+        "--seed",
+        "121201",
+        "--max-samples",
+        "1",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057001765401154/traces/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "spec/effects.qnt",
+        "--invariants",
+        "safety",
+        "--seed",
+        "121202",
+        "--max-samples",
+        "1000",
+        "--max-steps",
+        "40",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057001765401154/traces/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-elm-conformance",
+      "command": [
+        "node",
+        "qa/conformance.cjs"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "elmChecks": 199,
+  "quintNamedTests": 9,
+  "quintInvariantSamples": 1000,
+  "quintMaxSteps": 40,
+  "conformance": {
+    "passed": true,
+    "traces": 10,
+    "statesCompared": 60
+  },
+  "artifacts": {
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout": "31202aff8443424acbb249e86e55228e63d4b650c900982d4671bb479c90746d",
+    "conformance-report.json": "06cc30f8605815b77ffb26d5a24b1499fd4de9261b4756669a3ae6937443112f",
+    "elm-effects.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "elm-effects.stdout": "e1eccd80b502f7bd3d6ccd37ad362b1e61e3a2ac731da5341ae164e91f9b7bfb",
+    "elm-report.json": "46373b332477682734cf34a6521398cfefd05eccea541751bdca0ad724ed5c32",
+    "inputs/elm-stuff/0.19.2/Effects.elmi": "e4203c35d5dfc4229386411ab5b67f8e11b966020c12bad82cc89582faafa247",
+    "inputs/elm-stuff/0.19.2/Effects.elmo": "adce1b3895fc84e2102c160ee9279c0a689080b140aa5a08015b38c8092cbb7c",
+    "inputs/elm-stuff/0.19.2/Replay.elmi": "2fef24620b49521243e8b8a106f8f7f9d9053a3e2421f7d5389c72be7e284e67",
+    "inputs/elm-stuff/0.19.2/Replay.elmo": "01b807e6be54fad50df23457e8f406ec6ab5e1e67657cb28b685395cda240480",
+    "inputs/elm-stuff/0.19.2/Scene.elmi": "14986a9e398eeec2e42d4bb2621b8fc03d6baeb08dc3a7d1cc0fdaf658594823",
+    "inputs/elm-stuff/0.19.2/Scene.elmo": "e174ec5897c0954cbfd1872af4df759b857947eca7b06672249dd43c2c4acb12",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/d.dat": "4319281020aa5beaf44f9b3d0ea7ac720f6d44d349fe2e5e02f2e6b0fd5ab44f",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/check.cjs": "57c5b41acec3c3136e270ea2f5dfa341f688bfff8ba7ba19bbb868a43d353c00",
+    "inputs/qa/conformance.cjs": "c4bf1d0be0b6e0ef32d873c54d13441971a3b974bf2b5d44a1b2fa966f35bed7",
+    "inputs/qa/run.py": "1abb897b18386cc11c33ecbe8475e4215708f0b1ce3c829ec6c06375f7dfb99b",
+    "inputs/spec/effects.qnt": "16b87e85cd0c2c1cc5c1a18d97b0f89b086159aed12d03cd46c2c9dbbc483f93",
+    "inputs/src/Effects.elm": "e5b85f5366386ed31ed4f85da4fbd5b8896563608fd91f7ad0e044db6f5bcd1f",
+    "inputs/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "inputs/src/Scene.elm": "1f8e6420c41f53f53b68d8dc36b8e7223ead19b7856f003eaa1d2a5130cbdbf4",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "quint-elm-conformance.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "quint-elm-conformance.stdout": "3f03ac7fe7d0b7f079d45d13c0d58043944b3abe1ec865238de1d967631066d1",
+    "quint-invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-invariants.stdout": "5112ecc02b1a94f579f1dde13345903da302a57e442620563cda0fb2fae3d2c2",
+    "quint-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-tests.stdout": "90272d6a43f8b539ed8f2ef5c79ecc42ebaffc061cedb5c799ffae1903d10715",
+    "quint-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "replay.js": "9b4100c4aa32f5a71da37fd64d7f0d7b4d8cd4144d0be8a825ebae0a8494245b",
+    "traces/named-cancellationTest-7.itf.json": "994863952b02a23870fb096172bc3ea9320010c185038dddc1f5062212e3303c",
+    "traces/named-commitNoOptimismTest-1.itf.json": "20fa18045ff3820a75e6a854c6842077bc6368d6a334ccd31626bd5b33344907",
+    "traces/named-disconnectedTest-4.itf.json": "f8724ec6b6648b2aba30678eaf8df7137dcc04cd3bf03cc52e4915572e3d6c8d",
+    "traces/named-pendingBoundTest-8.itf.json": "193152789ed15b23d572ffe72e0f7b3c27bde6909bebe0799110037aabecf48c",
+    "traces/named-pendingNoOptimismTest-0.itf.json": "ba7c9f7e8010509ac64b37ebb19b9f5989406219d9876ef95d782014f8781181",
+    "traces/named-reboundTest-5.itf.json": "5b1c74846aad7b79e4e437a045bc1400ddada69bf3a2656bfde02ba5c318cf83",
+    "traces/named-staleAuthorityTest-3.itf.json": "879c5f8f69b20e3a87c65cb9b11f27c5b5511b8d5c819a2dad69bf394b62530f",
+    "traces/named-staleRequestTest-2.itf.json": "b139d8fca4b49754f93a8cdbc1e46989adb781fe73bc7ada6cb19ba985adc765",
+    "traces/named-terminalTest-6.itf.json": "f6162c36973bf86db4de1fe69d2955b0ec233a83d40be1d03754992d7275c584",
+    "traces/sample-0.itf.json": "2afa1449f4a58e1ef5c6d531594027612db20554900744df77260bbfa1a35082"
+  }
+}

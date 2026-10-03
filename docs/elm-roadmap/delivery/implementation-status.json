@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-modal-focus-v10",
-  "status": "Replacement desktop implementation active: native scene/modal candidate built; 33 private observer checks and 19 actual pixel/pointer/keyboard checks passed; full UI/UX and release acceptance pending",
+  "activeSlice": "implementation/elm-window-effects-v12",
+  "status": "Replacement desktop work active: 23 private native scene/modal/lifetime checks passed; compiled Elm minimize/restore transaction prototype passed 201 checks, nine Quint scenarios and action-journal replay; native minimized state and full UI/UX acceptance remain open",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -20,7 +20,10 @@
     "ELM-GPU-002",
     "ELM-GPU-004",
     "ELM-QA-024",
-    "ELM-LAY-001"
+    "ELM-LAY-001",
+    "ELM-ARC-005",
+    "ELM-ARC-006",
+    "ELM-ARC-007"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -139,9 +142,30 @@
       "productSceneAcceptance": false,
       "evidence": "implementation/elm-native-scene-v9/qa/native-1791056292999426300/report.json",
       "coreEvidence": "implementation/elm-modal-focus-v10/qa/slice-manifest.json"
+    },
+    "modalLifecycleV11": {
+      "nativeCases": 23,
+      "modalRetirementHeldReleaseSuppressed": true,
+      "helperNormalExit": true,
+      "privateCleanupPassed": true,
+      "evidence": "implementation/elm-modal-lifecycle-v11/qa/slice-manifest.json",
+      "scope": "Single-output native quiescent and one held-release retirement interleaving; no complete scene, device or session acceptance"
+    },
+    "windowEffectsV12": {
+      "compiledElmChecks": 201,
+      "quintNamedTests": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFActionJournalTraces": 10,
+      "actualITFStatesCompared": 60,
+      "compiledUnsafeMutantsDetected": 2,
+      "nativeEffectsImplemented": false,
+      "nativeMinimizedStateImplemented": false,
+      "evidence": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
+      "scope": "Pure compiled intent/receipt transactions only; native authority remains read-only"
     }
   },
-  "next": "Qualify modal held-release/device/exclusive routes and actual algorithm models; implement first-class minimized state and complete canonical scene observations; qualify host AT/IME, measured budgets and remaining whole-desktop journeys.",
+  "next": "Implement native first-class minimized state and authenticated effect boundary, with atomic family eligibility/focus and preserved normal workspace/geometry; integrate the typed Elm transaction; retain modal device/exclusive/security cases and all full UI/UX release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

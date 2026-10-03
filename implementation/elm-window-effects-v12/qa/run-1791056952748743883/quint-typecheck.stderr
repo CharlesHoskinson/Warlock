@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791056952748743883/inputs/spec/effects.qnt:9:61
+  9:   action receipt(request: int, authority: int, status: str) =
+                                                                 ^
+
+
+ Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791056952748743883/inputs/spec/effects.qnt:10:168
+  10:     all {s' = if(s.connected and s.status == "Pending" and request == s.request and authority == s.pendingAuthority and authority == s.authority) {...s,status:status} else s,e'={...event("receipt"),request:request,authority:authority,status:status}}
+                                                                                                                                                                             ^^^^
+
+error: parsing failed

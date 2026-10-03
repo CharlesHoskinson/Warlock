@@ -1,0 +1,2622 @@
+{
+  "passed": true,
+  "traces": 10,
+  "statesCompared": 60,
+  "receipts": [
+    {
+      "file": "named-cancellationTest-7.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Cancelled"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Cancelled"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "named-commitNoOptimismTest-1.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Committed"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "named-disconnectedTest-4.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    },
+    {
+      "file": "named-pendingBoundTest-8.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Operation already pending"
+        }
+      ]
+    },
+    {
+      "file": "named-pendingNoOptimismTest-0.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "named-reboundTest-5.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740994",
+            "epoch": "2",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    },
+    {
+      "file": "named-staleAuthorityTest-3.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    },
+    {
+      "file": "named-staleRequestTest-2.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    },
+    {
+      "file": "named-terminalTest-6.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Refused"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Refused"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Refused"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    },
+    {
+      "file": "sample-0.itf.json",
+      "messages": [
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "2",
+            "output": "3",
+            "revision": "4"
+          },
+          "scene": {
+            "revision": "4",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740994",
+            "epoch": "2",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740995",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740995",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "disconnect"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Refused"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "3",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Refused"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740995",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Refused"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "3",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "3",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "3",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "begin",
+          "operation": "minimize",
+          "incarnation": "8"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "3",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740994",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Refused"
+        },
+        {
+          "kind": "snapshot",
+          "context": {
+            "lifetime": "9007199254740995",
+            "epoch": "2",
+            "output": "3",
+            "revision": "6"
+          },
+          "scene": {
+            "revision": "6",
+            "locked": false,
+            "windows": [
+              {
+                "id": "8",
+                "owner": null,
+                "mapped": true,
+                "minimized": false,
+                "member": true,
+                "modal": false,
+                "inputAtProbe": true
+              }
+            ],
+            "order": [
+              "8"
+            ],
+            "focused": "8"
+          }
+        },
+        {
+          "kind": "receipt",
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "8",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740995",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null,
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "4"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "4"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": {
+            "kind": "window-effect",
+            "protocol": 1,
+            "intent": {
+              "request": "2",
+              "generation": "2",
+              "incarnation": "8",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740994",
+                "epoch": "2",
+                "output": "3",
+                "revision": "5"
+              }
+            }
+          },
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Pending"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Disconnected"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": false,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": null
+        },
+        {
+          "model": {
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "8",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740994",
+                  "epoch": "2",
+                  "output": "3",
+                  "revision": "5"
+                }
+              },
+              "status": "Unknown"
+            },
+            "paint": [
+              "8"
+            ],
+            "focus": "8"
+          },
+          "effect": null,
+          "error": "Stale, mismatched or terminal receipt"
+        }
+      ]
+    }
+  ]
+}

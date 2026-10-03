@@ -1,0 +1,720 @@
+An example execution:
+
+[State 0]
+{
+  e: { authority: 0, kind: "init", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 1,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 0,
+      request: 0,
+      status: "Idle"
+    }
+}
+
+[State 1]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 1,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 1,
+      request: 1,
+      status: "Pending"
+    }
+}
+
+[State 2]
+{
+  e: { authority: 0, kind: "rebind", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 1,
+      request: 1,
+      status: "Unknown"
+    }
+}
+
+[State 3]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Pending"
+    }
+}
+
+[State 4]
+{
+  e:
+    {
+      authority: 3,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Pending"
+    }
+}
+
+[State 5]
+{
+  e:
+    {
+      authority: 3,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Pending"
+    }
+}
+
+[State 6]
+{
+  e:
+    {
+      authority: 0,
+      kind: "disconnect",
+      minimized: false,
+      request: 0,
+      status: ""
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 7]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 8]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 9]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 10]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 11]
+{
+  e:
+    {
+      authority: 0,
+      kind: "disconnect",
+      minimized: false,
+      request: 0,
+      status: ""
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 12]
+{
+  e: { authority: 0, kind: "scene", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 13]
+{
+  e:
+    {
+      authority: 0,
+      kind: "disconnect",
+      minimized: false,
+      request: 0,
+      status: ""
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 14]
+{
+  e:
+    {
+      authority: 0,
+      kind: "disconnect",
+      minimized: false,
+      request: 0,
+      status: ""
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 15]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 16]
+{
+  e:
+    {
+      authority: 0,
+      kind: "disconnect",
+      minimized: false,
+      request: 0,
+      status: ""
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 17]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 18]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 19]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Refused"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 20]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 21]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 3,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 22]
+{
+  e: { authority: 0, kind: "scene", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 23]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Refused"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 24]
+{
+  e:
+    {
+      authority: 3,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 25]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Refused"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 26]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 3,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 27]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 28]
+{
+  e: { authority: 0, kind: "scene", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 29]
+{
+  e: { authority: 0, kind: "scene", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 30]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 3,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 31]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 3,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 32]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 33]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 34]
+{
+  e: { authority: 0, kind: "begin", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 35]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 36]
+{
+  e: { authority: 0, kind: "scene", minimized: true, request: 0, status: "" },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 37]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 3,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 38]
+{
+  e:
+    {
+      authority: 2,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Refused"
+    },
+  s:
+    {
+      authority: 2,
+      connected: false,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 39]
+{
+  e: { authority: 0, kind: "rebind", minimized: false, request: 0, status: "" },
+  s:
+    {
+      authority: 3,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[State 40]
+{
+  e:
+    {
+      authority: 3,
+      kind: "receipt",
+      minimized: false,
+      request: 2,
+      status: "Committed"
+    },
+  s:
+    {
+      authority: 3,
+      connected: true,
+      observedMinimized: false,
+      pendingAuthority: 2,
+      request: 2,
+      status: "Unknown"
+    }
+}
+
+[ok] No violation found (130ms at 7692 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

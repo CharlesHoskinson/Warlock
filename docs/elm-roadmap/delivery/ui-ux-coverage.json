@@ -117,7 +117,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
+          "evidenceClass": "compiled pure Elm and Quint action-journal replay",
+          "acceptance": false,
+          "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        }
+      ]
     },
     {
       "requirementId": "ELM-ARC-006",
@@ -144,7 +152,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
+          "evidenceClass": "compiled pure Elm and Quint action-journal replay",
+          "acceptance": false,
+          "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        }
+      ]
     },
     {
       "requirementId": "ELM-ARC-007",
@@ -195,7 +211,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
+          "evidenceClass": "compiled pure Elm and Quint action-journal replay",
+          "acceptance": false,
+          "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        }
+      ]
     },
     {
       "requirementId": "ELM-ARC-008",
@@ -1491,7 +1515,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-modal-lifecycle-v11/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/pointer/keyboard",
+          "acceptance": false,
+          "scope": "23 bounded single-output MAX/pin/modal/lifetime checks; canonical scene-revision and complete family/effect coverage remain open."
+        }
+      ]
     },
     {
       "requirementId": "ELM-GNO-007",
@@ -6006,5 +6038,6 @@
       ],
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
-  ]
+  ],
+  "partialEvidenceObservedUTC": "2026-10-03T19:56:20.446629+00:00"
 }

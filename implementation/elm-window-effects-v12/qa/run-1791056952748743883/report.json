@@ -1,0 +1,92 @@
+{
+  "passed": false,
+  "observedUTC": "2026-10-03T19:49:12.749817+00:00",
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Effects.elm": "e5b85f5366386ed31ed4f85da4fbd5b8896563608fd91f7ad0e044db6f5bcd1f",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Scene.elm": "1f8e6420c41f53f53b68d8dc36b8e7223ead19b7856f003eaa1d2a5130cbdbf4",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/run.py": "1abb897b18386cc11c33ecbe8475e4215708f0b1ce3c829ec6c06375f7dfb99b",
+    "qa/check.cjs": "57c5b41acec3c3136e270ea2f5dfa341f688bfff8ba7ba19bbb868a43d353c00",
+    "qa/conformance.cjs": "c4bf1d0be0b6e0ef32d873c54d13441971a3b974bf2b5d44a1b2fa966f35bed7",
+    "spec/effects.qnt": "6d106081c0d2eb64f6d7085d7d37568f668fe3eb3b8742dc615b43d032a96b48"
+  },
+  "scope": "Compiled pure Elm first-class minimize/restore intent/receipt prototype; no native effects, first-class native minimized state, complete policy or product acceptance",
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791056952748743883/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-effects",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "spec/effects.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "\n Error [QNT000]: mismatched input '=' expecting ':'\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791056952748743883/inputs/spec/effects.qnt:9:61\n  9:   action receipt(request: int, authority: int, status: str) =\n                                                                 ^\n\n\n Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791056952748743883/inputs/spec/effects.qnt:10:168\n  10:     all {s' = if(s.connected and s.status == \"Pending\" and request == s.request and authority == s.pendingAuthority and authority == s.authority) {...s,status:status} else s,e'={...event(\"receipt\"),request:request,authority:authority,status:status}}\n                                                                                                                                                                             ^^^^\n\nerror: parsing failed\n",
+  "artifacts": {
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout": "8f2d8bbb73d76a5553a40a08d39afa434bec619d330f798d99ba0ea8a5e2e976",
+    "elm-effects.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "elm-effects.stdout": "e1eccd80b502f7bd3d6ccd37ad362b1e61e3a2ac731da5341ae164e91f9b7bfb",
+    "elm-report.json": "46373b332477682734cf34a6521398cfefd05eccea541751bdca0ad724ed5c32",
+    "inputs/elm-stuff/0.19.2/Effects.elmi": "e4203c35d5dfc4229386411ab5b67f8e11b966020c12bad82cc89582faafa247",
+    "inputs/elm-stuff/0.19.2/Effects.elmo": "adce1b3895fc84e2102c160ee9279c0a689080b140aa5a08015b38c8092cbb7c",
+    "inputs/elm-stuff/0.19.2/Replay.elmi": "2fef24620b49521243e8b8a106f8f7f9d9053a3e2421f7d5389c72be7e284e67",
+    "inputs/elm-stuff/0.19.2/Replay.elmo": "01b807e6be54fad50df23457e8f406ec6ab5e1e67657cb28b685395cda240480",
+    "inputs/elm-stuff/0.19.2/Scene.elmi": "14986a9e398eeec2e42d4bb2621b8fc03d6baeb08dc3a7d1cc0fdaf658594823",
+    "inputs/elm-stuff/0.19.2/Scene.elmo": "e174ec5897c0954cbfd1872af4df759b857947eca7b06672249dd43c2c4acb12",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/d.dat": "80ede4f181aca5bce737941c838ae7b74e2764349cecea988ee685b080f59414",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/check.cjs": "57c5b41acec3c3136e270ea2f5dfa341f688bfff8ba7ba19bbb868a43d353c00",
+    "inputs/qa/conformance.cjs": "c4bf1d0be0b6e0ef32d873c54d13441971a3b974bf2b5d44a1b2fa966f35bed7",
+    "inputs/qa/run.py": "1abb897b18386cc11c33ecbe8475e4215708f0b1ce3c829ec6c06375f7dfb99b",
+    "inputs/spec/effects.qnt": "6d106081c0d2eb64f6d7085d7d37568f668fe3eb3b8742dc615b43d032a96b48",
+    "inputs/src/Effects.elm": "e5b85f5366386ed31ed4f85da4fbd5b8896563608fd91f7ad0e044db6f5bcd1f",
+    "inputs/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "inputs/src/Scene.elm": "1f8e6420c41f53f53b68d8dc36b8e7223ead19b7856f003eaa1d2a5130cbdbf4",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "quint-typecheck.stderr": "bed297aef1ddde0bbd40607f2baee553ae787a461a1c498135372d0ca3bfd6b4",
+    "quint-typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "quint-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "replay.js": "9b4100c4aa32f5a71da37fd64d7f0d7b4d8cd4144d0be8a825ebae0a8494245b"
+  }
+}

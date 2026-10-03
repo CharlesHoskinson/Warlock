@@ -1,0 +1,21 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+Failed case: mismatch generation
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'Committed'
+- 'Pending'
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057152130620970/receipt-tuple-weakened/qa/check.cjs:27:244
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057152130620970/receipt-tuple-weakened/qa/check.cjs:10:39)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-effects-v12/qa/run-1791057152130620970/receipt-tuple-weakened/qa/check.cjs:27:209
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Committed',
+  expected: 'Pending',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
