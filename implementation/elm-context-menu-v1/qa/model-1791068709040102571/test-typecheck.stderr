@@ -1,0 +1,421 @@
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:3:66
+  3:   action check(predicate: bool): bool = all { assert(predicate), state' = state, monitor' = monitor }
+                                                                      ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:3:75
+  3:   action check(predicate: bool): bool = all { assert(predicate), state' = state, monitor' = monitor }
+                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:4:35
+  4:   action activateFirst = activate(state.menu.menuId, state.menu.target, 0)
+                                       ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:4:54
+  4:   action activateFirst = activate(state.menu.menuId, state.menu.target, 0)
+                                                          ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:5:41
+  5:   action rejectFirst = rejectedActivate(state.menu.menuId, state.menu.target, 0)
+                                             ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:5:60
+  5:   action rejectFirst = rejectedActivate(state.menu.menuId, state.menu.target, 0)
+                                                                ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:6:82
+  6:   run nonmutatingOpenTest = init.then(openMenu(Set(0, 2))).then(check(opened and state.intents.length() == 0 and state.menu.selected == 0))
+                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:6:114
+  6:   run nonmutatingOpenTest = init.then(openMenu(Set(0, 2))).then(check(opened and state.intents.length() == 0 and state.menu.selected == 0))
+                                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:7:116
+  7:   run navigationSkipsDisabledTest = init.then(openMenu(Set(0, 2))).then(navigate("down")).then(check(navigated and state.menu.selected == 2 and state.intents.length() == 0))
+                                                                                                                        ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:7:145
+  7:   run navigationSkipsDisabledTest = init.then(openMenu(Set(0, 2))).then(navigate("down")).then(check(navigated and state.menu.selected == 2 and state.intents.length() == 0))
+                                                                                                                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:8:91
+  8:   run navigationWrapTest = init.then(openMenu(Set(0, 2))).then(navigate("up")).then(check(state.menu.selected == 2)).then(navigate("down")).then(check(state.menu.selected == 0))
+                                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:8:152
+  8:   run navigationWrapTest = init.then(openMenu(Set(0, 2))).then(navigate("up")).then(check(state.menu.selected == 2)).then(navigate("down")).then(check(state.menu.selected == 0))
+                                                                                                                                                            ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:9:85
+  9:   run homeEndTest = init.then(openMenu(Set(0, 2))).then(navigate("end")).then(check(state.menu.selected == 2)).then(navigate("home")).then(check(state.menu.selected == 0))
+                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:9:146
+  9:   run homeEndTest = init.then(openMenu(Set(0, 2))).then(navigate("end")).then(check(state.menu.selected == 2)).then(navigate("home")).then(check(state.menu.selected == 0))
+                                                                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:10:97
+  10:   run allDisabledTest = init.then(openMenu(Set())).then(navigate("down")).then(rejectedActivate(state.menu.menuId, state.menu.target, 0)).then(check(state.menu.selected == -1 and state.intents.length() == 0))
+                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:10:116
+  10:   run allDisabledTest = init.then(openMenu(Set())).then(navigate("down")).then(rejectedActivate(state.menu.menuId, state.menu.target, 0)).then(check(state.menu.selected == -1 and state.intents.length() == 0))
+                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:10:150
+  10:   run allDisabledTest = init.then(openMenu(Set())).then(navigate("down")).then(rejectedActivate(state.menu.menuId, state.menu.target, 0)).then(check(state.menu.selected == -1 and state.intents.length() == 0))
+                                                                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:10:180
+  10:   run allDisabledTest = init.then(openMenu(Set())).then(navigate("down")).then(rejectedActivate(state.menu.menuId, state.menu.target, 0)).then(check(state.menu.selected == -1 and state.intents.length() == 0))
+                                                                                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:11:81
+  11:   run disabledActionTest = init.then(openMenu(Set(0, 2))).then(rejectedActivate(state.menu.menuId, state.menu.target, 1)).then(check(state.intents.length() == 0))
+                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:11:100
+  11:   run disabledActionTest = init.then(openMenu(Set(0, 2))).then(rejectedActivate(state.menu.menuId, state.menu.target, 1)).then(check(state.intents.length() == 0))
+                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:11:134
+  11:   run disabledActionTest = init.then(openMenu(Set(0, 2))).then(rejectedActivate(state.menu.menuId, state.menu.target, 1)).then(check(state.intents.length() == 0))
+                                                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:12:106
+  12:   run exactlyOneIntentTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(check(activated and state.intents.length() == 1 and exactDispatch and monitor.unresolved == Set(1)))
+                                                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:13:110
+  13:   run pendingDuplicateTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Pending))
+                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:13:142
+  13:   run pendingDuplicateTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Pending))
+                                                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'Pending' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:13:162
+  13:   run pendingDuplicateTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Pending))
+                                                                                                                                                                       ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:14:138
+  14:   run unknownNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Unknown and monitor.unresolved == Set(1)))
+                                                                                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:14:170
+  14:   run unknownNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Unknown and monitor.unresolved == Set(1)))
+                                                                                                                                                                               ^^^^^
+
+
+ Error [QNT404]: Name 'Unknown' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:14:190
+  14:   run unknownNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Unknown and monitor.unresolved == Set(1)))
+                                                                                                                                                                                                   ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:15:184
+  15:   run unknownDismissReopenTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and state.intents.length() == 1))
+                                                                                                                                                                                             ^^^^^
+
+
+ Error [QNT404]: Name 'Unknown' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:15:204
+  15:   run unknownDismissReopenTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and state.intents.length() == 1))
+                                                                                                                                                                                                                 ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:15:216
+  15:   run unknownDismissReopenTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and state.intents.length() == 1))
+                                                                                                                                                                                                                             ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:16:221
+  16:   run unknownFreshObserveNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(freshObserve("frontend")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and monitor.unresolved == Set(1) and state.intents.length() == 1))
+                                                                                                                                                                                                                                  ^^^^^
+
+
+ Error [QNT404]: Name 'Unknown' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:16:241
+  16:   run unknownFreshObserveNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(freshObserve("frontend")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and monitor.unresolved == Set(1) and state.intents.length() == 1))
+                                                                                                                                                                                                                                                      ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:16:286
+  16:   run unknownFreshObserveNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(freshObserve("frontend")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and monitor.unresolved == Set(1) and state.intents.length() == 1))
+                                                                                                                                                                                                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:17:116
+  17:   run refusalRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(check(state.menu.phase == Refused and monitor.unresolved.size() == 0)).then(activateFirst).then(check(state.intents.length() == 2 and state.menu.operationId == 2))
+                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'Refused' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:17:136
+  17:   run refusalRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(check(state.menu.phase == Refused and monitor.unresolved.size() == 0)).then(activateFirst).then(check(state.intents.length() == 2 and state.menu.operationId == 2))
+                                                                                                                                             ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:17:212
+  17:   run refusalRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(check(state.menu.phase == Refused and monitor.unresolved.size() == 0)).then(activateFirst).then(check(state.intents.length() == 2 and state.menu.operationId == 2))
+                                                                                                                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:17:244
+  17:   run refusalRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(check(state.menu.phase == Refused and monitor.unresolved.size() == 0)).then(activateFirst).then(check(state.intents.length() == 2 and state.menu.operationId == 2))
+                                                                                                                                                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:18:283
+  18:   run receiptSeparateObservationTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "committed")).then(check(received and receiptsDoNotObserve and monitor.observations == 0)).then(freshObserve("frontend")).then(check(observed and monitor.observations == 1 and state.liveTarget.frontend == 2))
+                                                                                                                                                                                                                                                                                                ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:19:129
+  19:   run staleReceiptTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(staleReceipt(99)).then(check(staleReceived and state.menu.phase == Pending and monitor.unresolved == Set(1)))
+                                                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'Pending' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:19:149
+  19:   run staleReceiptTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(staleReceipt(99)).then(check(staleReceived and state.menu.phase == Pending and monitor.unresolved == Set(1)))
+                                                                                                                                                          ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:20:166
+  20:   run oldReceiptNewPendingTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(activateFirst).then(staleReceipt(1)).then(check(state.menu.phase == Pending and state.menu.operationId == 2 and monitor.unresolved == Set(2)))
+                                                                                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'Pending' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:20:186
+  20:   run oldReceiptNewPendingTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(activateFirst).then(staleReceipt(1)).then(check(state.menu.phase == Pending and state.menu.operationId == 2 and monitor.unresolved == Set(2)))
+                                                                                                                                                                                               ^^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:20:198
+  20:   run oldReceiptNewPendingTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(activateFirst).then(staleReceipt(1)).then(check(state.menu.phase == Pending and state.menu.operationId == 2 and monitor.unresolved == Set(2)))
+                                                                                                                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:21:121
+  21:   run staleMenuIdTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(openMenu(Set(0, 2))).then(rejectedActivate(1, state.menu.target, 0)).then(check(state.menu.menuId == 2 and state.intents.length() == 0))
+                                                                                                                              ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:21:155
+  21:   run staleMenuIdTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(openMenu(Set(0, 2))).then(rejectedActivate(1, state.menu.target, 0)).then(check(state.menu.menuId == 2 and state.intents.length() == 0))
+                                                                                                                                                                ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:21:182
+  21:   run staleMenuIdTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(openMenu(Set(0, 2))).then(rejectedActivate(1, state.menu.target, 0)).then(check(state.menu.menuId == 2 and state.intents.length() == 0))
+                                                                                                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:22:116
+  22:   run staleTargetTest = init.then(openMenu(Set(0, 2))).then(freshObserve("frontend")).then(rejectFirst).then(check(state.intents.length() == 0 and not(eligible(state))))
+                                                                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:22:161
+  22:   run staleTargetTest = init.then(openMenu(Set(0, 2))).then(freshObserve("frontend")).then(rejectFirst).then(check(state.intents.length() == 0 and not(eligible(state))))
+                                                                                                                                                                      ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:23:128
+  23:   run capabilitiesChangedTest = init.then(openMenu(Set(0, 2))).then(freshObserve("capabilities")).then(rejectFirst).then(check(state.intents.length() == 0 and state.menu.capabilityGeneration != state.liveCapabilities))
+                                                                                                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:23:160
+  23:   run capabilitiesChangedTest = init.then(openMenu(Set(0, 2))).then(freshObserve("capabilities")).then(rejectFirst).then(check(state.intents.length() == 0 and state.menu.capabilityGeneration != state.liveCapabilities))
+                                                                                                                                                                     ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:23:195
+  23:   run capabilitiesChangedTest = init.then(openMenu(Set(0, 2))).then(freshObserve("capabilities")).then(rejectFirst).then(check(state.intents.length() == 0 and state.menu.capabilityGeneration != state.liveCapabilities))
+                                                                                                                                                                                                        ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:24:126
+  24:   run outputRetireTest = init.then(openMenu(Set(0, 2))).then(retireOutput).then(rejectFirst).then(check(retired == false and state.menu.phase == Closed and state.liveOutput == 2 and state.intents.length() == 0))
+                                                                                                                                   ^^^^^
+
+
+ Error [QNT404]: Name 'Closed' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:24:146
+  24:   run outputRetireTest = init.then(openMenu(Set(0, 2))).then(retireOutput).then(rejectFirst).then(check(retired == false and state.menu.phase == Closed and state.liveOutput == 2 and state.intents.length() == 0))
+                                                                                                                                                       ^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:24:157
+  24:   run outputRetireTest = init.then(openMenu(Set(0, 2))).then(retireOutput).then(rejectFirst).then(check(retired == false and state.menu.phase == Closed and state.liveOutput == 2 and state.intents.length() == 0))
+                                                                                                                                                                  ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:24:183
+  24:   run outputRetireTest = init.then(openMenu(Set(0, 2))).then(retireOutput).then(rejectFirst).then(check(retired == false and state.menu.phase == Closed and state.liveOutput == 2 and state.intents.length() == 0))
+                                                                                                                                                                                            ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:25:102
+  25:   run dismissNonmutatingTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(check(dismissed and state.menu.phase == Closed and state.intents.length() == 0))
+                                                                                                           ^^^^^
+
+
+ Error [QNT404]: Name 'Closed' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:25:122
+  25:   run dismissNonmutatingTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(check(dismissed and state.menu.phase == Closed and state.intents.length() == 0))
+                                                                                                                               ^^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:25:133
+  25:   run dismissNonmutatingTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(check(dismissed and state.menu.phase == Closed and state.intents.length() == 0))
+                                                                                                                                          ^^^^^
+
+
+ Error [QNT404]: Name 'state' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068709040102571/spec/menu_test.qnt:26:228
+  26:   run retiredUnknownStillBlockedTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(retireOutput).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(monitor.unresolved == Set(1) and state.intents.length() == 1))
+                                                                                                                                                                                                                                         ^^^^^
+
+error: parsing failed

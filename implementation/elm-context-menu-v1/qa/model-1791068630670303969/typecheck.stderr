@@ -1,0 +1,8 @@
+
+ Error [QNT404]: Name 'toSet' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068630670303969/spec/menu.qnt:126:23
+  126:   val uniqueIntents = state.intents.map(intent => intent.operationId).toSet().size() == state.intents.length()
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: parsing failed

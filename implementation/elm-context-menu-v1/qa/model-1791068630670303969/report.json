@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Single-actor abstract context-menu safety; sampled evidence only",
+  "inputs": {
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "ab943ea7ba33c79d5f2713bfea389e8c0f9be19e1a3d0b2c3d5d0d67f3a31240",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT404]: Name 'toSet' not found\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068630670303969/spec/menu.qnt:126:23\\n  126:   val uniqueIntents = state.intents.map(intent => intent.operationId).toSet().size() == state.intents.length()\\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "types-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "201822e34e75316888d74f3dcb895e3aefa01043a1c970d1bf04fac0d54bd656",
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "ab943ea7ba33c79d5f2713bfea389e8c0f9be19e1a3d0b2c3d5d0d67f3a31240",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  }
+}

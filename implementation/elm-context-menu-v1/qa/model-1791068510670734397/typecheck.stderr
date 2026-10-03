@@ -1,0 +1,29 @@
+
+ Error [QNT101]: Built-in name 'enabled' is redefined in module 'menu'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:24:33
+  24:   pure def openedMenu(s: State, enabled: Set[int]): Menu = {
+                                      ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'isEmpty' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:27:37
+  27:     enabled: enabled, selected: if (enabled.isEmpty()) -1 else enabled.min(),
+                                          ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'min' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:27:64
+  27:     enabled: enabled, selected: if (enabled.isEmpty()) -1 else enabled.min(),
+                                                                     ^^^^^^^^^^^^^
+
+
+ Error [QNT101]: Built-in name 'enabled' is redefined in module 'menu'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:32:19
+  32:   action openMenu(enabled: Set[int]): bool = all {
+                        ^^^^^^^^^^^^^^^^^
+
+error: parsing failed

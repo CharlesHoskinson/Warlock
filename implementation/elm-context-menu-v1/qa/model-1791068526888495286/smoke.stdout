@@ -1,0 +1,73 @@
+An example execution:
+
+[State 0]
+{
+  monitor:
+    {
+      beforeCount: 0,
+      beforeObservations: 0,
+      dispatchEligible: false,
+      event: "init",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 1,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 0,
+          operationId: 0,
+          outputGeneration: 1,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 1]
+{
+  monitor:
+    {
+      beforeCount: 0,
+      beforeObservations: 0,
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 1,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(0, 2),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 1,
+          phase: Open,
+          selected: 0,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[ok] No violation found (17ms at 588 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x2a879 --backend=typescript to reproduce.

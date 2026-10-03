@@ -1,0 +1,15 @@
+
+ Error [QNT000]: missing '}' at 'action'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068438698777553/spec/menu-sketch.qnt:15:55
+  15:   type Intent = { operationId: int, target: Identity, action: int }
+                                                            ^^^^^^
+
+
+ Error [QNT000]: extraneous input 'type' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068438698777553/spec/menu-sketch.qnt:16:3
+  16:   type State = {
+        ^^^^
+
+error: parsing failed

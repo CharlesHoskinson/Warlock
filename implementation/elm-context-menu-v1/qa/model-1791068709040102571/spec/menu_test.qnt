@@ -1,0 +1,27 @@
+module menu_test {
+  import menu.* from "./menu"
+  action check(predicate: bool): bool = all { assert(predicate), state' = state, monitor' = monitor }
+  action activateFirst = activate(state.menu.menuId, state.menu.target, 0)
+  action rejectFirst = rejectedActivate(state.menu.menuId, state.menu.target, 0)
+  run nonmutatingOpenTest = init.then(openMenu(Set(0, 2))).then(check(opened and state.intents.length() == 0 and state.menu.selected == 0))
+  run navigationSkipsDisabledTest = init.then(openMenu(Set(0, 2))).then(navigate("down")).then(check(navigated and state.menu.selected == 2 and state.intents.length() == 0))
+  run navigationWrapTest = init.then(openMenu(Set(0, 2))).then(navigate("up")).then(check(state.menu.selected == 2)).then(navigate("down")).then(check(state.menu.selected == 0))
+  run homeEndTest = init.then(openMenu(Set(0, 2))).then(navigate("end")).then(check(state.menu.selected == 2)).then(navigate("home")).then(check(state.menu.selected == 0))
+  run allDisabledTest = init.then(openMenu(Set())).then(navigate("down")).then(rejectedActivate(state.menu.menuId, state.menu.target, 0)).then(check(state.menu.selected == -1 and state.intents.length() == 0))
+  run disabledActionTest = init.then(openMenu(Set(0, 2))).then(rejectedActivate(state.menu.menuId, state.menu.target, 1)).then(check(state.intents.length() == 0))
+  run exactlyOneIntentTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(check(activated and state.intents.length() == 1 and exactDispatch and monitor.unresolved == Set(1)))
+  run pendingDuplicateTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Pending))
+  run unknownNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(rejectFirst).then(check(state.intents.length() == 1 and state.menu.phase == Unknown and monitor.unresolved == Set(1)))
+  run unknownDismissReopenTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and state.intents.length() == 1))
+  run unknownFreshObserveNoRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(freshObserve("frontend")).then(dismiss).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(state.menu.phase == Unknown and monitor.unresolved == Set(1) and state.intents.length() == 1))
+  run refusalRetryTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(check(state.menu.phase == Refused and monitor.unresolved.size() == 0)).then(activateFirst).then(check(state.intents.length() == 2 and state.menu.operationId == 2))
+  run receiptSeparateObservationTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "committed")).then(check(received and receiptsDoNotObserve and monitor.observations == 0)).then(freshObserve("frontend")).then(check(observed and monitor.observations == 1 and state.liveTarget.frontend == 2))
+  run staleReceiptTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(staleReceipt(99)).then(check(staleReceived and state.menu.phase == Pending and monitor.unresolved == Set(1)))
+  run oldReceiptNewPendingTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "refused")).then(activateFirst).then(staleReceipt(1)).then(check(state.menu.phase == Pending and state.menu.operationId == 2 and monitor.unresolved == Set(2)))
+  run staleMenuIdTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(openMenu(Set(0, 2))).then(rejectedActivate(1, state.menu.target, 0)).then(check(state.menu.menuId == 2 and state.intents.length() == 0))
+  run staleTargetTest = init.then(openMenu(Set(0, 2))).then(freshObserve("frontend")).then(rejectFirst).then(check(state.intents.length() == 0 and not(eligible(state))))
+  run capabilitiesChangedTest = init.then(openMenu(Set(0, 2))).then(freshObserve("capabilities")).then(rejectFirst).then(check(state.intents.length() == 0 and state.menu.capabilityGeneration != state.liveCapabilities))
+  run outputRetireTest = init.then(openMenu(Set(0, 2))).then(retireOutput).then(rejectFirst).then(check(retired == false and state.menu.phase == Closed and state.liveOutput == 2 and state.intents.length() == 0))
+  run dismissNonmutatingTest = init.then(openMenu(Set(0, 2))).then(dismiss).then(check(dismissed and state.menu.phase == Closed and state.intents.length() == 0))
+  run retiredUnknownStillBlockedTest = init.then(openMenu(Set(0, 2))).then(activateFirst).then(receipt(1, "uncertain")).then(retireOutput).then(openMenu(Set(0, 2))).then(rejectFirst).then(check(monitor.unresolved == Set(1) and state.intents.length() == 1))
+}

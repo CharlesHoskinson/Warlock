@@ -1,0 +1,120 @@
+{
+  "passed": false,
+  "stage": "final",
+  "scope": "Single-actor abstract context-menu safety; sampled evidence only",
+  "inputs": {
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "eda8b708814650a431d1ea4e18ca2bc28d08d7b015dc3b4c5ea5e97155dae60a",
+    "spec/menu_test.qnt": "8b8981c7eac2da4647834fba3bc457c2e22b15919f3ce7121b422f59603bf568",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=10",
+        "--max-steps=10",
+        "--seed=174201",
+        "--invariants=safety"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "menu_test.qnt",
+        "--backend=typescript",
+        "--match=^(nonmutatingOpenTest|navigationSkipsDisabledTest|navigationWrapTest|homeEndTest|allDisabledTest|disabledActionTest|exactlyOneIntentTest|pendingDuplicateTest|unknownNoRetryTest|unknownDismissReopenTest|unknownFreshObserveNoRetryTest|refusalRetryTest|receiptSeparateObservationTest|staleReceiptTest|oldReceiptNewPendingTest|staleMenuIdTest|staleTargetTest|capabilitiesChangedTest|outputRetireTest|dismissNonmutatingTest|retiredUnknownStillBlockedTest)$",
+        "--max-samples=1",
+        "--seed=174202",
+        "--out-itf=../named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=174203",
+        "--invariants=safety",
+        "--witnesses=opened,navigated,activated,dismissed,received,observed,retired,staleReceived",
+        "--out-itf=../sample-{seq}.itf.json"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('error: [QNT501] Expected opened,navigated,activated,dismissed,received,observed,retired,staleReceived to be a valid expression\\nerror: Argument error\\n')",
+  "artifacts": {
+    "types-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "smoke.stdout": "40f0a87fc2d31815b9a0b8cb769f37ed5b8a04a7568ddbfeb0eb41766cb97187",
+    "smoke.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-nonmutatingOpenTest-0.itf.json": "6c9c2aabb93fd4c782c6a8e395a804771b48d3cb1d12f40ff0b7c12a4c25b6c8",
+    "named-navigationSkipsDisabledTest-1.itf.json": "2c1d904b7981088129a0f1442cfd182fb7a3d1301f2504d017be4f62a6872161",
+    "named-navigationWrapTest-2.itf.json": "1890de7ece829c548e8b50b4181f68260dc3b5f2d77016e8b87f531f54db4310",
+    "named-homeEndTest-3.itf.json": "a8331c33ed822a3e4cc3dcf8dd17dd4bcfda17a0e35b632b29726542f17e64ae",
+    "named-allDisabledTest-4.itf.json": "eb40dde796daa20c6be1a06f498de1f2a591d46441fcbad694e87536d1c3062c",
+    "named-disabledActionTest-5.itf.json": "b8f6597521b2c1b0c5d2ca4174c3719a1d22e8da109d62d8f1cc01f1fd8aea2e",
+    "named-exactlyOneIntentTest-6.itf.json": "136b59be87efd282cdcef12cbc44caa5dace06cd97f13541c7787766a32f27e1",
+    "named-pendingDuplicateTest-7.itf.json": "3db3c9e3ae03ec52c6059ec79be57cec7d7106d6e341961f22f4b5a11ad41a70",
+    "named-unknownNoRetryTest-8.itf.json": "d494d153910496216b66be47d6d4d38e4b160868a1c2fdaa095df004903fabfc",
+    "named-unknownDismissReopenTest-9.itf.json": "60c71b67240bb5fa9d6d0070aa155a6baa72ed03fd58fca6b0f3574816487660",
+    "named-unknownFreshObserveNoRetryTest-10.itf.json": "248eaa57d0de0195d48e27c93baaea3a6cf3e8bfa488eaa8b3566046b2afd41f",
+    "named-refusalRetryTest-11.itf.json": "34695158bcfdb94f5adba0dde84d6d35c1f896b1a2a74c41594023e2ff9f51b7",
+    "named-receiptSeparateObservationTest-12.itf.json": "7302858a08b0450df145905e46703e98a826a7a300526917465dec3118f0aaf2",
+    "named-staleReceiptTest-13.itf.json": "c4245da8754a589e22cd2fe6902f1f1a4c7922dfd43455e6bf053d35f185219a",
+    "named-oldReceiptNewPendingTest-14.itf.json": "e24d20c870a6fe106165f3d94fefa0780101131d15f514689eedb6193908066b",
+    "named-staleMenuIdTest-15.itf.json": "3b6b2354e57951b11c58ce5e2142e01f5750fd3493945abc5b59521cf914987f",
+    "named-staleTargetTest-16.itf.json": "ee5d26eac977489c5fe0bace57fde9e7bca3c7406a7cdc2430054e7f2d177666",
+    "named-capabilitiesChangedTest-17.itf.json": "dbad49e600a9d05238f4e4aa481b20903fc8a3f060dc32651d4c63ced3ea6acf",
+    "named-outputRetireTest-18.itf.json": "479e7a0e7bab539c55e891ee76a929bb7bdecb590459393eb648b64b6f564ee9",
+    "named-dismissNonmutatingTest-19.itf.json": "d0660db9bebf90511ab8aa3f498ddd2704760948cb08557f33c1fafbb6158450",
+    "named-retiredUnknownStillBlockedTest-20.itf.json": "8d9905725532f4b17716c5eded6db181c221ffc14c829d8c4d4b3d867c7a890e",
+    "named.stdout": "7199400d2623ee106b204e4f680185e4a7946976fb995eb3ba03c2f1b1ce6805",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sampled.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sampled.stderr": "6809ab8fafe9a756c01874f0a088c9276bf821fb200530ef043fa39ca2dc0986",
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "eda8b708814650a431d1ea4e18ca2bc28d08d7b015dc3b4c5ea5e97155dae60a",
+    "spec/menu_test.qnt": "8b8981c7eac2da4647834fba3bc457c2e22b15919f3ce7121b422f59603bf568",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  }
+}

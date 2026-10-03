@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "stage": "sketch",
+  "scope": "Single-actor abstract context-menu safety; sampled evidence only",
+  "inputs": {
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "qa/model.py": "630b04aa80bce67e814e069cf2fa7be5162b87b6c985ea7cdcb7d72af1232feb"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-sketch.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: missing '}' at 'action'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068438698777553/spec/menu-sketch.qnt:15:55\\n  15:   type Intent = { operationId: int, target: Identity, action: int }\\n                                                            ^^^^^^\\n\\n\\n Error [QNT000]: extraneous input 'type' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068438698777553/spec/menu-sketch.qnt:16:3\\n  16:   type State = {\\n        ^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "sketch-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sketch-typecheck.stderr": "6565c2b83e9286b30fc76c6b7cec3e7b1948e6dbb8c491ac90e497a945ddc927",
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "qa/model.py": "630b04aa80bce67e814e069cf2fa7be5162b87b6c985ea7cdcb7d72af1232feb"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Single-actor abstract context-menu safety; sampled evidence only",
+  "inputs": {
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "cd723fde443dcbb1a270ca5223d5c54508cf369695cf8610c74507d502540b1b",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068491451103226/spec/menu.qnt:32:38\\n  32:   action openMenu(enabled: Set[int]) = all {\\n                                           ^\\n\\n\\n Error [QNT000]: extraneous input ',' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068491451103226/spec/menu.qnt:34:60\\n  34:     state' = { ...state, menu: openedMenu(state, enabled) },\\n                                                                 ^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "types-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "877018f5696642efd5dd8eec259d0a7491ee324a862a1c7b41d0c8ef1839db19",
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "cd723fde443dcbb1a270ca5223d5c54508cf369695cf8610c74507d502540b1b",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  }
+}

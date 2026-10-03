@@ -1,0 +1,15 @@
+host-start: layer=1 sandbox=1 acceleration-policy=always experimental-effects=1
+
+** (process:2): WARNING **: 17:03:36.678: Failed to get atspi registered event listeners: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Detached","rows":[],"transaction":"Idle","status":"Connecting…","focused":null,"menu":null}}
+backend-frame: {"protocolVersion":3,"kind":"attached","binding":{"lifetime":"6878609382104061189","session":"16433920649663691296","frontend":"1"},"compositor":{"pid":2556141,"instance":"efb50993780079460b0cbed1363e2166a2de1d9f_1791068614_717356820","coreHash":"efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"},"capabilities":{"observe":true,"effects":true,"minimizedState":true,"effectProtocol":1,"operations":["minimize","restore"],"canonicalScene":false}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"6878609382104061189","session":"16433920649663691296","frontend":"1"},"requestId":"1","context":{"lifetime":"6878609382104061189","epoch":"1","output":"1","revision":"1"},"scene":{"revision":"1","windows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","minimized":false}]}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","point":[394,209.4375]}],"transaction":"Idle","status":"Connected","focused":null,"menu":null}}
+render-report: {"protocolVersion":3,"kind":"render-report","body":{"windows":1,"actionsDisabled":false}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","point":[394,209.4375]}],"transaction":"Idle","status":"Connected","focused":"context-action-1","menu":{"id":"1","actions":[{"index":0,"label":"Restore","disabled":true,"point":[668,138]},{"index":1,"label":"Minimize","disabled":false,"point":[668,182]}],"dismiss":[668,270]}}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","point":[394,209.4375]}],"transaction":"Idle","status":"Connected","focused":"context-menu","menu":{"id":"1","actions":[{"index":0,"label":"Restore","disabled":true,"point":[668,138]},{"index":1,"label":"Minimize","disabled":false,"point":[668,182]}],"dismiss":[668,270]}}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","point":[394,209.4375]}],"transaction":"Idle","status":"Connected","focused":"window-1","menu":null}}
+view-diagnostics: {"visibility":"visible","entries":1,"root":true,"receiver":"function","width":800,"height":420}
+backend-exit: waited=1 normal=1 code=0
+host-exit: failure=0 rendered=1

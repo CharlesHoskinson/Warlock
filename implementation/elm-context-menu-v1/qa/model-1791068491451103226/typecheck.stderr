@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068491451103226/spec/menu.qnt:32:38
+  32:   action openMenu(enabled: Set[int]) = all {
+                                           ^
+
+
+ Error [QNT000]: extraneous input ',' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068491451103226/spec/menu.qnt:34:60
+  34:     state' = { ...state, menu: openedMenu(state, enabled) },
+                                                                 ^
+
+error: parsing failed

@@ -1,0 +1,1680 @@
+An example execution:
+
+[State 0]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 0,
+      beforeOutput: 1,
+      beforeTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      dispatchEligible: false,
+      event: "init",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 1,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 0,
+          operationId: 0,
+          outputGeneration: 1,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 1]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 0,
+      beforeOutput: 1,
+      beforeTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      dispatchEligible: false,
+      event: "retire",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 0,
+          operationId: 0,
+          outputGeneration: 1,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 2]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 0,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      dispatchEligible: false,
+      event: "rejected",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 0,
+          operationId: 0,
+          outputGeneration: 1,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 3]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 0,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 0,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Open,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 4]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 0,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 1, incarnation: 1 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 1,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Open,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 5]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 1,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 1,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Open,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 6]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 1,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      dispatchEligible: false,
+      event: "dismiss",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 1,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 7]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 1,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 2, incarnation: 1 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 2,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 3, incarnation: 1 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 8]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 2,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 3, incarnation: 1 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 3,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 1,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 1, incarnation: 1 }
+        }
+    }
+}
+
+[State 9]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 3,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 3,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 2,
+      liveTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 2,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Open,
+          selected: -1,
+          target: { authority: 1, frontend: 3, incarnation: 2 }
+        }
+    }
+}
+
+[State 10]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 3,
+      beforeOutput: 2,
+      beforeTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      dispatchEligible: false,
+      event: "retire",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 3,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 1,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 2,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 3, incarnation: 2 }
+        }
+    }
+}
+
+[State 11]
+{
+  monitor:
+    {
+      beforeCapabilities: 1,
+      beforeCount: 0,
+      beforeObservations: 3,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 4,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 2,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 3, incarnation: 2 }
+        }
+    }
+}
+
+[State 12]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 4,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 3, incarnation: 2 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 2,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 3, incarnation: 2 }
+        }
+    }
+}
+
+[State 13]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "stale-receipt",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 1,
+          enabled: Set(),
+          menuId: 2,
+          operationId: 0,
+          outputGeneration: 2,
+          phase: Closed,
+          selected: -1,
+          target: { authority: 1, frontend: 3, incarnation: 2 }
+        }
+    }
+}
+
+[State 14]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 0,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 15]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 16]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 17]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "rejected",
+      lastEnabled: Set(0, 2),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 18]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 0,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 19]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 1,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents: [],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 0,
+          outputGeneration: 3,
+          phase: Open,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 20]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 0,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: true,
+      event: "activate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set(1)
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Pending,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 21]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "rejected",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set(1)
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Pending,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 22]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "receipt",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Refused,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 23]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Refused,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 24]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 5,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Refused,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 25]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 5,
+      beforeOutput: 3,
+      beforeTarget: { authority: 1, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 6,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Refused,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 26]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 6,
+      beforeOutput: 3,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "dismiss",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 6,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 3,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Closed,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 27]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 6,
+      beforeOutput: 3,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "retire",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 6,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 4,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Closed,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 28]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 6,
+      beforeOutput: 4,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "retire",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 6,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 5,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Closed,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 29]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 6,
+      beforeOutput: 5,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 2 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 7,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 5,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 3,
+          operationId: 1,
+          outputGeneration: 3,
+          phase: Closed,
+          selected: 2,
+          target: { authority: 1, frontend: 4, incarnation: 2 }
+        }
+    }
+}
+
+[State 30]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 7,
+      beforeOutput: 5,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 7,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 5,
+      liveTarget: { authority: 2, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Open,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 31]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 7,
+      beforeOutput: 5,
+      beforeTarget: { authority: 2, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 8,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 5,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Open,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 32]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 8,
+      beforeOutput: 5,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "rejected",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 8,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 5,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Open,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 33]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 8,
+      beforeOutput: 5,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "retire",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 8,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Closed,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 34]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 8,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "stale-receipt",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 8,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Closed,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 35]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 8,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 3 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 9,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 4 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Closed,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 36]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 9,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 4 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 10,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(0, 2),
+          menuId: 4,
+          operationId: 0,
+          outputGeneration: 5,
+          phase: Closed,
+          selected: 0,
+          target: { authority: 2, frontend: 4, incarnation: 3 }
+        }
+    }
+}
+
+[State 37]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 10,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      dispatchEligible: false,
+      event: "open",
+      lastEnabled: Set(0, 2),
+      nextOperation: 2,
+      observations: 10,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(),
+          menuId: 5,
+          operationId: 0,
+          outputGeneration: 6,
+          phase: Open,
+          selected: -1,
+          target: { authority: 3, frontend: 4, incarnation: 5 }
+        }
+    }
+}
+
+[State 38]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 10,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      dispatchEligible: false,
+      event: "navigate",
+      lastEnabled: Set(),
+      nextOperation: 2,
+      observations: 10,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 2,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(),
+          menuId: 5,
+          operationId: 0,
+          outputGeneration: 6,
+          phase: Open,
+          selected: -1,
+          target: { authority: 3, frontend: 4, incarnation: 5 }
+        }
+    }
+}
+
+[State 39]
+{
+  monitor:
+    {
+      beforeCapabilities: 2,
+      beforeCount: 1,
+      beforeObservations: 10,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      dispatchEligible: false,
+      event: "observe",
+      lastEnabled: Set(),
+      nextOperation: 2,
+      observations: 11,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 3,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(),
+          menuId: 5,
+          operationId: 0,
+          outputGeneration: 6,
+          phase: Open,
+          selected: -1,
+          target: { authority: 3, frontend: 4, incarnation: 5 }
+        }
+    }
+}
+
+[State 40]
+{
+  monitor:
+    {
+      beforeCapabilities: 3,
+      beforeCount: 1,
+      beforeObservations: 11,
+      beforeOutput: 6,
+      beforeTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      dispatchEligible: false,
+      event: "stale-receipt",
+      lastEnabled: Set(),
+      nextOperation: 2,
+      observations: 11,
+      uncertain: false,
+      unresolved: Set()
+    },
+  state:
+    {
+      intents:
+        [
+          {
+            actionId: 2,
+            operationId: 1,
+            target: { authority: 1, frontend: 4, incarnation: 2 }
+          }
+        ],
+      liveCapabilities: 3,
+      liveOutput: 6,
+      liveTarget: { authority: 3, frontend: 4, incarnation: 5 },
+      menu:
+        {
+          capabilityGeneration: 2,
+          enabled: Set(),
+          menuId: 5,
+          operationId: 0,
+          outputGeneration: 6,
+          phase: Open,
+          selected: -1,
+          target: { authority: 3, frontend: 4, incarnation: 5 }
+        }
+    }
+}
+
+[ok] No violation found (4919ms at 203 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+opened was witnessed in 1000 trace(s) out of 1000 explored (100.00%)
+navigated was witnessed in 989 trace(s) out of 1000 explored (98.90%)
+activated was witnessed in 402 trace(s) out of 1000 explored (40.20%)
+dismissed was witnessed in 844 trace(s) out of 1000 explored (84.40%)
+received was witnessed in 378 trace(s) out of 1000 explored (37.80%)
+observed was witnessed in 1000 trace(s) out of 1000 explored (100.00%)
+retired was witnessed in 978 trace(s) out of 1000 explored (97.80%)
+staleReceived was witnessed in 958 trace(s) out of 1000 explored (95.80%)
+rejected was witnessed in 1000 trace(s) out of 1000 explored (100.00%)

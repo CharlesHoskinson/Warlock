@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Single-actor abstract context-menu safety; sampled evidence only",
+  "inputs": {
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "5c0793ff35c0da342c5ee93ffc846dcd12910f0287e882ff20b3ae7bd4e07844",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'menu'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:24:33\\n  24:   pure def openedMenu(s: State, enabled: Set[int]): Menu = {\\n                                      ^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT404]: Name 'isEmpty' not found\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:27:37\\n  27:     enabled: enabled, selected: if (enabled.isEmpty()) -1 else enabled.min(),\\n                                          ^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT404]: Name 'min' not found\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:27:64\\n  27:     enabled: enabled, selected: if (enabled.isEmpty()) -1 else enabled.min(),\\n                                                                     ^^^^^^^^^^^^^\\n\\n\\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'menu'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-context-menu-v1/qa/model-1791068510670734397/spec/menu.qnt:32:19\\n  32:   action openMenu(enabled: Set[int]): bool = all {\\n                        ^^^^^^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "types-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "5b339ed5ec27e7d89ea04623c6422400032b1508563d278c2597ddb9588fc868",
+    "spec/menu-sketch.qnt": "082151ef959ae902eff280cc45c79c4ecf17820d8e1da3cdaee7a093f7beb348",
+    "spec/menu-types.qnt": "d6c0c96e057228bcedf858e885da8b17bd3cda5924a868bb45bc2f953b2e3ee6",
+    "spec/menu.qnt": "5c0793ff35c0da342c5ee93ffc846dcd12910f0287e882ff20b3ae7bd4e07844",
+    "qa/model.py": "03852d7a20f8cdb4a196eebef35ccce27caced33b5c87d3f49a0beab25a578fc"
+  }
+}

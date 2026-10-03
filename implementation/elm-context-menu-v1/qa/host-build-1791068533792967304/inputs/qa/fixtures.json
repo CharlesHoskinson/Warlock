@@ -1,0 +1,2177 @@
+{
+  "traces": [
+    {
+      "id": "opening-and-navigation-do-not-dispatch",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "down"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "down"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "up"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "end"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "home"
+        }
+      ],
+      "expect": [
+        {
+          "at": 0,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 2
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 2
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 2
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "all-disabled-stays-unselected",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "close",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "down"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "home"
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "end"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 0
+        }
+      ],
+      "expect": [
+        {
+          "at": 0,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": null
+            }
+          }
+        },
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": null
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": null
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": null
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "disabled-selection-and-activation",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "select",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 1
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 1
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "down"
+        },
+        {
+          "op": "select",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 0
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [
+              {
+                "intent": 1,
+                "action": "close",
+                "bindingMatchesInput": true
+              }
+            ],
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "refusal-and-explicit-retry",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "refused"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 1,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "refused"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [
+              {
+                "intent": 2,
+                "action": "close",
+                "bindingMatchesInput": true
+              }
+            ],
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "uncertain-no-retry-until-late-receipt",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "uncertain"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "unknown"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "unknown"
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "unknown-ledger-survives-dismiss-reopen",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "uncertain"
+        },
+        {
+          "op": "dismiss",
+          "menu": 0
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 1,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "unknown"
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "unknown"
+            }
+          }
+        },
+        {
+          "at": 6,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "wrong-binding-cannot-select-or-dispatch",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "select",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "old-menu-cannot-affect-new-menu",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "dismiss",
+          "menu": 0
+        },
+        {
+          "op": "navigate",
+          "menu": 1,
+          "navigation": "end"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "target-retired-dismisses-and-blocks-stale",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "invalidate",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          }
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "output-other-generation-not-retired",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "outputRetired",
+          "output": "DP-1",
+          "generation": "2"
+        },
+        {
+          "op": "outputRetired",
+          "output": "DP-2",
+          "generation": "1"
+        },
+        {
+          "op": "outputRetired",
+          "output": "DP-1",
+          "generation": "1"
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "explicit-cancellation-is-retryable",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "cancelled"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "cancelled"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [
+              {
+                "intent": 2,
+                "action": "close",
+                "bindingMatchesInput": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "dismiss-does-not-dispatch-restoration",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "dismiss",
+          "menu": 0
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "late-receipt-does-not-close-different-menu",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "2"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready",
+              "selected": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "uncertain-identity-ledger-survives-revision-change",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "uncertain"
+        },
+        {
+          "op": "dismiss",
+          "menu": 0
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 1,
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "cancelled"
+        },
+        {
+          "op": "activate",
+          "menu": 1,
+          "binding": {
+            "authority": "1",
+            "revision": "2",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "unknown"
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "effects": [],
+            "outstanding": 1
+          }
+        },
+        {
+          "at": 6,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "cancelled"
+            },
+            "outstanding": 0
+          }
+        },
+        {
+          "at": 7,
+          "value": {
+            "effects": [
+              {
+                "intent": 2,
+                "action": "close",
+                "bindingMatchesInput": true
+              }
+            ],
+            "outstanding": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "retirement-prevents-reopening-old-generation",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "outputRetired",
+          "output": "DP-1",
+          "generation": "1"
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "2",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "invalidated-target-cannot-reopen-same-binding",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "invalidate",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          }
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "2"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": null
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "ready"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "row-out-of-bounds-never-dispatches",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": -1
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 999
+        },
+        {
+          "op": "select",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": -1
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": 0,
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": 0,
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": 0,
+              "status": "ready"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "empty-menu-remains-inert",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": []
+        },
+        {
+          "op": "navigate",
+          "menu": 0,
+          "navigation": "end"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 0
+        }
+      ],
+      "expect": [
+        {
+          "at": 0,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": null,
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 1,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": null,
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "effects": [],
+            "menu": {
+              "selected": null,
+              "status": "ready"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "duplicate-receipt-cannot-corrupt-new-pending",
+      "steps": [
+        {
+          "op": "open",
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "items": [
+            {
+              "action": "restore",
+              "enabled": true
+            },
+            {
+              "action": "move",
+              "enabled": false
+            },
+            {
+              "action": "close",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "refused"
+        },
+        {
+          "op": "activate",
+          "menu": 0,
+          "binding": {
+            "authority": "1",
+            "revision": "1",
+            "output": "DP-1",
+            "outputGeneration": "1",
+            "window": "window-a",
+            "incarnation": "1"
+          },
+          "index": 2
+        },
+        {
+          "op": "receive",
+          "intent": 0,
+          "outcome": "committed"
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "effects": [],
+            "menu": {
+              "status": "pending"
+            },
+            "outstanding": 1
+          }
+        }
+      ]
+    }
+  ],
+  "decoders": [
+    {
+      "id": "valid-counter-0",
+      "kind": "counter",
+      "value": "0",
+      "accepted": true,
+      "encoded": "0"
+    },
+    {
+      "id": "valid-counter-1",
+      "kind": "counter",
+      "value": "1",
+      "accepted": true,
+      "encoded": "1"
+    },
+    {
+      "id": "valid-counter-9007199254740993",
+      "kind": "counter",
+      "value": "9007199254740993",
+      "accepted": true,
+      "encoded": "9007199254740993"
+    },
+    {
+      "id": "valid-counter-18446744073709551615",
+      "kind": "counter",
+      "value": "18446744073709551615",
+      "accepted": true,
+      "encoded": "18446744073709551615"
+    },
+    {
+      "id": "bad-counter-0",
+      "kind": "counter",
+      "value": 1,
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-1",
+      "kind": "counter",
+      "value": 9007199254740992,
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-2",
+      "kind": "counter",
+      "value": null,
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-3",
+      "kind": "counter",
+      "value": true,
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-4",
+      "kind": "counter",
+      "value": "",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-5",
+      "kind": "counter",
+      "value": "00",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-6",
+      "kind": "counter",
+      "value": "01",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-7",
+      "kind": "counter",
+      "value": "-1",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-8",
+      "kind": "counter",
+      "value": "+1",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-9",
+      "kind": "counter",
+      "value": "1.0",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-10",
+      "kind": "counter",
+      "value": " 1",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-11",
+      "kind": "counter",
+      "value": "1 ",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-12",
+      "kind": "counter",
+      "value": "18446744073709551616",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-13",
+      "kind": "counter",
+      "value": "999999999999999999999",
+      "accepted": false
+    },
+    {
+      "id": "bad-counter-14",
+      "kind": "counter",
+      "value": "\u0661",
+      "accepted": false
+    },
+    {
+      "id": "valid-exact-binding",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": "1"
+      },
+      "accepted": true,
+      "encoded": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": "1"
+      }
+    },
+    {
+      "id": "bad-binding-lifetime-0",
+      "kind": "binding",
+      "value": {
+        "lifetime": "0",
+        "session": "9007199254740993",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-lifetime-1",
+      "kind": "binding",
+      "value": {
+        "lifetime": 1,
+        "session": "9007199254740993",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-lifetime-01",
+      "kind": "binding",
+      "value": {
+        "lifetime": "01",
+        "session": "9007199254740993",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-lifetime-None",
+      "kind": "binding",
+      "value": {
+        "lifetime": null,
+        "session": "9007199254740993",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-session-0",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "0",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-session-1",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": 1,
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-session-01",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "01",
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-session-None",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": null,
+        "frontend": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-frontend-0",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": "0"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-frontend-1",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": 1
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-frontend-01",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": "01"
+      },
+      "accepted": false
+    },
+    {
+      "id": "bad-binding-frontend-None",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": null
+      },
+      "accepted": false
+    },
+    {
+      "id": "binding-extra-field",
+      "kind": "binding",
+      "value": {
+        "lifetime": "18446744073709551615",
+        "session": "9007199254740993",
+        "frontend": "1",
+        "other": "1"
+      },
+      "accepted": false
+    },
+    {
+      "id": "binding-missing-field",
+      "kind": "binding",
+      "value": {
+        "lifetime": "1",
+        "session": "1"
+      },
+      "accepted": false
+    }
+  ]
+}
