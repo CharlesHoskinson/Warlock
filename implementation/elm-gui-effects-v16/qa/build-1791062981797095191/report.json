@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Effects.elm": "a665b7ce46d229bfe2ceb0f62593836daf3115466577e3596647defd7e85f28c",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "d6c887ba584f6da4d0318c7e4c67765a4c7a1f2d1556d6c355a1b65902444e92",
+    "src/Main.elm": "a3a5f39fb66fe97df59c8874fd3ce982fa11f86601b06e5434621ea866f4fbba",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "native/host.c": "cbe3245ed40e5e263ed380360ee2036ab53aa7b5db3946d7754ac2e627298006",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/effect_endpoint.py": "6e98bee3db0b45d2326bd718bd77fef6bc5c9d162fee067b5dc545089f5e4976",
+    "adapter/daemon.py": "8662036f7be5c5ea12c39196ecbd9cf6251b02324f683e583fc3a8bfdb64aa55",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "915dcc23ebb9f53f52b7e65dbb1969471dbec60573b01c32470d2dc56a1b0f8a",
+    "qa/build.py": "9bd04ea1454e52e54f4e3a2a60d21c70f1782d6468caf4c85d2e71baabc19274",
+    "qa/native.py": "01fdb1db626c45a738df3ae5100dff60d3120d5203d0d66cdeb3b16e1c4135e4",
+    "qa/replay.cjs": "d429d05f3e60fc1a304d8ae97c0526c79962ab74a5493572949f0fa02567d819",
+    "qa/freeze.py": "bc25cbd3def99d3483206d2ed9a239fc6082bf7f5f0dba1d1431c380df09bb29",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062981797095191/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-checks",
+      "command": [
+        "node",
+        "qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062981797095191/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062981797095191/replay-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062981797095191/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062981797095191/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "91bc8981bde2d4f67241ba5a34ee208f2c94c2df4ae7f524848a2778eaf21752"
+}

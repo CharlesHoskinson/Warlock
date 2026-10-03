@@ -1,0 +1,11 @@
+host-start: layer=1 sandbox=1 acceleration-policy=always experimental-effects=1
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Awaiting","rows":[],"status":"Connecting… "}}
+
+** (process:2): WARNING **: 15:26:32.162: Failed to get atspi registered event listeners: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","action":"Minimize","disabled":false,"point":[679.4375,205.4375]}],"status":"Connected "}}
+render-report: {"protocolVersion":3,"kind":"render-report","body":{"windows":1,"actionsDisabled":false}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Minimized","action":"Restore","disabled":false,"point":[682.984375,205.4375]}],"status":"Connected Committed"}}
+projection-report: {"protocolVersion":3,"kind":"projection-report","body":{"phase":"Coherent","rows":[{"incarnation":"1","label":"ELM-AUTHORITY-FIXTURE","state":"Open","action":"Minimize","disabled":false,"point":[679.4375,205.4375]}],"status":"Connected Committed"}}
+backend-exit: waited=1 normal=1 code=0
+host-exit: failure=0 rendered=1

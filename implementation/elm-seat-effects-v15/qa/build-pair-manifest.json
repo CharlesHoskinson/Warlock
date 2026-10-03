@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "scope": "Exact owning core/plugin compile and source closure only; native acceptance pending",
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-minimize-lifecycle-v14/build-1791060004170871924/Hyprland",
+      "sha256": "51f997640d0f354bcab21446403030a6bfe23ccecadbf17162a156fd5678023b",
+      "versionHeaderSHA256": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-effects-v15/qa/build-1791061980875222735/elm-window-effect-authority.so",
+      "sha256": "d7077a3979a2ac42fc44ab6cf9f2b15e1175c974b2cbff3893e13e7af210ed51"
+    }
+  },
+  "buildReport": "qa/build-1791061980875222735/report.json",
+  "buildReportSHA256": "f004d8e17be9f9066ab204758efd6b53a3087f4d0738388a0fb88121c09aaa75",
+  "files": {
+    "adapter/effect_endpoint.py": "6e98bee3db0b45d2326bd718bd77fef6bc5c9d162fee067b5dc545089f5e4976",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "birth_fixture.py": "15c046c88252ca5da355c3ccd197b2a93c7e7395bb5e4545afaff00dbecd8e2f",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e",
+    "native/authority.cpp": "f70fea2e4a14c542131ad3db95765cac677137ebad6726f73cfbf8fd8aeb33fa",
+    "native-build-report.json": "e7cefe5c97a98889e7dc41b200f13e0e8346b89d17c6be751423870519411cb3",
+    "pointer_fifo.py": "12541b0fcd478587d5d5933a5891a575c38bb9055df7657e30f03c0c32b2a5ca",
+    "qa/build-1791061980875222735/authority.d": "13a87fa466c78f65bf8bd5889dce092f280f4359e0d56d9142e9dcb33e4476f2",
+    "qa/build-1791061980875222735/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791061980875222735/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791061980875222735/core-symbols.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791061980875222735/core-symbols.stdout": "67bcf54360201526080d94825a596395dd728f495cd4cafb47dbffb63bcbf2f8",
+    "qa/build-1791061980875222735/elm-window-effect-authority.so": "d7077a3979a2ac42fc44ab6cf9f2b15e1175c974b2cbff3893e13e7af210ed51",
+    "qa/build-1791061980875222735/flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791061980875222735/flags.stdout": "fcbffe6c6ddfa5ece0c35385c505186850a56619c270ca83cf7e3805cdc30616",
+    "qa/build-1791061980875222735/inputs/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "qa/build-1791061980875222735/inputs/candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "qa/build-1791061980875222735/inputs/candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "qa/build-1791061980875222735/inputs/candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e",
+    "qa/build-1791061980875222735/inputs/native/authority.cpp": "f70fea2e4a14c542131ad3db95765cac677137ebad6726f73cfbf8fd8aeb33fa",
+    "qa/build-1791061980875222735/inputs/native-build-report.json": "e7cefe5c97a98889e7dc41b200f13e0e8346b89d17c6be751423870519411cb3",
+    "qa/build-1791061980875222735/inputs/qa/build.py": "8dad8bb4aef864ceb906b29f8e1f19c4c0e3874ff35bcf65ca106002e064d886",
+    "qa/build-1791061980875222735/inputs/qa/lifecycle_native.py": "cb21e3a31a50f545f9526e675db80b3086b4048915b54d721ea60ef2a62bf5fd",
+    "qa/build-1791061980875222735/libs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791061980875222735/libs.stdout": "a58961e2ce92b9ecd4783f2605e379c3220f4e467b00c1e32da280f42d56b737",
+    "qa/build-1791061980875222735/report.json": "f004d8e17be9f9066ab204758efd6b53a3087f4d0738388a0fb88121c09aaa75",
+    "qa/build.py": "8dad8bb4aef864ceb906b29f8e1f19c4c0e3874ff35bcf65ca106002e064d886",
+    "qa/freeze_pair.py": "51d172bba2750b28f39ecb9d7a329827509172fcb0cc50b51169c5e94f98d7cc",
+    "qa/lifecycle_native.py": "cb21e3a31a50f545f9526e675db80b3086b4048915b54d721ea60ef2a62bf5fd"
+  }
+}

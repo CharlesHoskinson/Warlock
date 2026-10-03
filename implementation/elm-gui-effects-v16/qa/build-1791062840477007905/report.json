@@ -1,0 +1,65 @@
+{
+  "passed": false,
+  "inputs": {
+    "src/Effects.elm": "a665b7ce46d229bfe2ceb0f62593836daf3115466577e3596647defd7e85f28c",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "d6c887ba584f6da4d0318c7e4c67765a4c7a1f2d1556d6c355a1b65902444e92",
+    "src/Main.elm": "a3a5f39fb66fe97df59c8874fd3ce982fa11f86601b06e5434621ea866f4fbba",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "native/host.c": "cbe3245ed40e5e263ed380360ee2036ab53aa7b5db3946d7754ac2e627298006",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/effect_endpoint.py": "6e98bee3db0b45d2326bd718bd77fef6bc5c9d162fee067b5dc545089f5e4976",
+    "adapter/daemon.py": "8662036f7be5c5ea12c39196ecbd9cf6251b02324f683e583fc3a8bfdb64aa55",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "915dcc23ebb9f53f52b7e65dbb1969471dbec60573b01c32470d2dc56a1b0f8a",
+    "qa/build.py": "91100e9a2ae13f1f69fcccd01851e376349be2bd6ae1eb59fda661e875f40269",
+    "qa/native.py": "01fdb1db626c45a738df3ae5100dff60d3120d5203d0d66cdeb3b16e1c4135e4",
+    "qa/replay.cjs": "651535b06f6428b56a488526e77373a6aa76be7edc5dc444eaa54c4157b94d58",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "error": "RuntimeError('This flag was given a bad value:\\n\\n    --output=/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062840477007905/replay.cjs\\n\\nI need a valid <output-file> value. For example:\\n\\n    --output=elm.js\\n    --output=index.html\\n    --output=/dev/null\\n\\n')",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-effects-v16/qa/build-1791062840477007905/replay.cjs"
+      ],
+      "exitCode": 1
+    }
+  ]
+}

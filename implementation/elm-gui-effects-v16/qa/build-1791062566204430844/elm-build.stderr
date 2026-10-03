@@ -1,0 +1,10 @@
+-- BAD FLAGS ------------------------------------------------------ src/Main.elm
+
+Your `main` program wants an unspecified type from JavaScript.
+
+70| main = Browser.element {init = \_ -> (initial,Cmd.none),update = update,view = view,subscriptions = \_ -> nativeEvents Incoming}
+    ^^^^
+But type variables like `flags` cannot be given as flags. I need to know exactly
+what type of data I am getting, so I can guarantee that unexpected data cannot
+sneak in and crash the Elm program.
+

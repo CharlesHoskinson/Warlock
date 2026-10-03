@@ -6159,5 +6159,22 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T21:06:19.087744+00:00"
+  "partialEvidenceObservedUTC": "2026-10-03T21:06:19.087744+00:00",
+  "boundedImplementationEvidence": [
+    {
+      "slice": "implementation/elm-seat-effects-v15",
+      "level": "native-component",
+      "checks": 63,
+      "evidence": "implementation/elm-seat-effects-v15/qa/slice-manifest.json",
+      "acceptance": "No complete requirement/scenario acceptance inferred."
+    },
+    {
+      "slice": "implementation/elm-gui-effects-v16",
+      "level": "compiled-replay and native-GUI-component",
+      "replayChecks": 20,
+      "nativeChecks": 9,
+      "evidence": "implementation/elm-gui-effects-v16/qa/slice-manifest.json",
+      "acceptance": "Real pointer/Elm/native effect/observed DOM path only; human UX, AT/IME, output/device and release campaigns remain planned."
+    }
+  ]
 }

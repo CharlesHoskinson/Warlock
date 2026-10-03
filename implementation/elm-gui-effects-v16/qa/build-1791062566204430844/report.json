@@ -1,0 +1,46 @@
+{
+  "passed": false,
+  "inputs": {
+    "src/Effects.elm": "3f4e2c6f0dd58ecc10d7b74fda595529f284a3609b55a5affdf55e19ce195e34",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "cb8d04f7bfb065abd8cd61fe0690aeb7827954039b533737cbf1a2a42cdd200b",
+    "src/Main.elm": "872cecf66ff773cf6ea7431ae9aa6d44ab4fb301a8216951e4b57f72ca93c330",
+    "native/host.c": "75dffd911d889c0f03642457f645d0affc28a161e532b26fca3992b13bb87c4f",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/effect_endpoint.py": "6e98bee3db0b45d2326bd718bd77fef6bc5c9d162fee067b5dc545089f5e4976",
+    "adapter/daemon.py": "8662036f7be5c5ea12c39196ecbd9cf6251b02324f683e583fc3a8bfdb64aa55",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "ff141b69880120a5dea138022052880292694e53dad4efcd116a2fd1fe141606",
+    "qa/build.py": "4cbf2e81263422e0e985ebcd7c9c3c9a2104a480c6d5e2b943281394549f641e"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "error": "RuntimeError('-- BAD FLAGS ------------------------------------------------------ src/Main.elm\\n\\nYour `main` program wants an unspecified type from JavaScript.\\n\\n70| main = Browser.element {init = \\\\_ -> (initial,Cmd.none),update = update,view = view,subscriptions = \\\\_ -> nativeEvents Incoming}\\n    ^^^^\\nBut type variables like `flags` cannot be given as flags. I need to know exactly\\nwhat type of data I am getting, so I can guarantee that unexpected data cannot\\nsneak in and crash the Elm program.\\n\\n')",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 1
+    }
+  ]
+}

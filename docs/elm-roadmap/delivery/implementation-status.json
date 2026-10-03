@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-minimize-lifecycle-v14",
-  "status": "Minimized-parent child inheritance repaired; 60 private native cases and 13 named lifecycle model cases/1000 invariant runs passed. Bounded V13 findings resolved; complete scene, seat/host/UI and release acceptance remain open.",
+  "activeSlice": "implementation/elm-gui-effects-v16",
+  "status": "Native seat outcome guards and real Elm minimize/restore controls implemented in private hosts. Bounded campaigns and typed replay validation; full scene, UX, hardware/AT and release gates remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -197,6 +197,22 @@
       "completeFeatureAccepted": false,
       "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
       "coreSHA256": "51f997640d0f354bcab21446403030a6bfe23ccecadbf17162a156fd5678023b"
+    },
+    "seatEffectsV15": {
+      "nativeCases": 63,
+      "livePopupGrabRefusal": true,
+      "actualSeatKeyboardSurfacePostconditions": true,
+      "evidence": "implementation/elm-seat-effects-v15/qa/slice-manifest.json",
+      "wholeFeatureAccepted": false
+    },
+    "guiEffectsV16": {
+      "nativeCases": 9,
+      "compiledReplayChecks": 20,
+      "actualPointerElmNativeEffectDOM": true,
+      "canonicalSceneCapability": false,
+      "evidence": "implementation/elm-gui-effects-v16/qa/slice-manifest.json",
+      "wholeFeatureAccepted": false,
+      "preservedFailure": "First packet mislabeled passed despite cleanup exception; explicitly rejected in README and excluded from accepted manifest."
     }
   },
   "next": "Strengthen native outcome proof with actual seat-surface postconditions and grab refusal, qualify parent retirement/remap, then bind typed Elm intent/outcome controls in a real isolated GUI host. Complete canonical scene/presentation, previews/original deadlines, output/layout/GPU/AT/IME and full release gates.",
