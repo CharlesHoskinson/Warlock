@@ -1,0 +1,23 @@
+
+ Error [QNT000]: Couldn't unify set and list
+Trying to unify Set[_t33] and List[int]
+Trying to unify (Set[_t33], _t34, (_t34, _t33) => _t34) => _t34 and (List[int], Set[_t27], (Set[t_id_69], t_id_69) => Set[t_id_69]) => _t35
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052621365335701/inputs/spec/scene.qnt:8:50
+  8:   pure def members(order: List[int]): Set[int] = order.fold(Set(), (acc,id) => acc.union(Set(id)))
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Expected [s] and [] to be the same
+Trying to unify entities ['s'] and []
+Trying to unify Read[_v536] & Update['s'] and Read['s']
+Trying to unify (Read[_v534] & Update[_v535], Read[_v536] & Update[_v535]) => Read[_v537] & Update[_v535] and (Read[_v516] & Update['s'], Read['s']) => _e108
+Trying to infer effect for operator application in then(then(init, admit(with(with(with(s, "minimized", Set(1)), "order", List(2, 3)), "focus", 2))), assert(eq(field(s, "order"), List(1, 2, 3))))
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052621365335701/inputs/spec/scene.qnt:27:35
+  27:   run minimizedOwnerRefusedTest = init.then(admit({...s,minimized:Set(1),order:List(2,3),focus:2})).then(assert(s.order == List(1,2,3)))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

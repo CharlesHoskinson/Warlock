@@ -1,0 +1,101 @@
+{
+  "passed": false,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "src/Scene.elm": "b62766f7112975604fdc3a9a0e58c7fcf74b02aaeefde9f9f3a3739445124505",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/run.py": "3ec01031487ca79e372fcbaf29fd4fe3126a94a640365cc46583c7ae8c343909",
+    "qa/check.cjs": "6fc8c24d00232c4ec519c9298a4db12d4a9bd8c6bbeb7afe2d9eebac206cdd86",
+    "spec/scene.qnt": "49613686d75b7bf92af48a0a415584cf33e4c050373c2f9b2a333d1df43b591c"
+  },
+  "observedUTC": "2026-10-03T18:37:01.378461+00:00",
+  "scope": "CPU admission prototype only; not native canonical scene, pixels, hit dispatch or focus acceptance",
+  "error": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t33] and List[int]\nTrying to unify (Set[_t33], _t34, (_t34, _t33) => _t34) => _t34 and (List[int], Set[_t27], (Set[t_id_69], t_id_69) => Set[t_id_69]) => _t35\n\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052621365335701/inputs/spec/scene.qnt:8:50\n  8:   pure def members(order: List[int]): Set[int] = order.fold(Set(), (acc,id) => acc.union(Set(id)))\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT000]: Expected [s] and [] to be the same\nTrying to unify entities ['s'] and []\nTrying to unify Read[_v536] & Update['s'] and Read['s']\nTrying to unify (Read[_v534] & Update[_v535], Read[_v536] & Update[_v535]) => Read[_v537] & Update[_v535] and (Read[_v516] & Update['s'], Read['s']) => _e108\nTrying to infer effect for operator application in then(then(init, admit(with(with(with(s, \"minimized\", Set(1)), \"order\", List(2, 3)), \"focus\", 2))), assert(eq(field(s, \"order\"), List(1, 2, 3))))\n\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052621365335701/inputs/spec/scene.qnt:27:35\n  27:   run minimizedOwnerRefusedTest = init.then(admit({...s,minimized:Set(1),order:List(2,3),focus:2})).then(assert(s.order == List(1,2,3)))\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n",
+  "commands": [
+    {
+      "name": "elm-version",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052621365335701/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-admission",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "spec/scene.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "artifacts": {
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout": "b91ea045a2220994b3618c0fa7362ae4d16fb1355fa110ab3943059b85ef8c9a",
+    "elm-admission.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "elm-admission.stdout": "ea62076ce10976ac4131e1511adbb138c171dc76374ac64508a5f015129289bd",
+    "elm-report.json": "2c8c9a73f913e827093398b9fd79a351f5c9de498727840a3a33661a96a9e0ab",
+    "elm-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elm-version.stdout": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+    "inputs/elm-stuff/0.19.2/Replay.elmi": "47e5afd99c2df7cc147e76b0397d3773359f050b240f7a59e09c51a0a4473790",
+    "inputs/elm-stuff/0.19.2/Replay.elmo": "46b83fb5c7472febfdcb447851edb06b0877f1c25a146030e2ac2d5f6fa292c7",
+    "inputs/elm-stuff/0.19.2/Scene.elmi": "efc446269f1643d6b9e24e303c0ef8c5d205ef5df702edaf586d1bb853a2fac8",
+    "inputs/elm-stuff/0.19.2/Scene.elmo": "346853a10cdb35e67c28fecad732262c74794fc1f5ac8a7646affee5b1c26e12",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/d.dat": "d44ec1d521830aa6fac948ee50f95cbb6356bc025498bf7b8856e902ea6677ec",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/check.cjs": "6fc8c24d00232c4ec519c9298a4db12d4a9bd8c6bbeb7afe2d9eebac206cdd86",
+    "inputs/qa/run.py": "3ec01031487ca79e372fcbaf29fd4fe3126a94a640365cc46583c7ae8c343909",
+    "inputs/spec/scene.qnt": "49613686d75b7bf92af48a0a415584cf33e4c050373c2f9b2a333d1df43b591c",
+    "inputs/src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "inputs/src/Scene.elm": "b62766f7112975604fdc3a9a0e58c7fcf74b02aaeefde9f9f3a3739445124505",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "quint-typecheck.stderr": "c24bcf2f523629d46baaa8ad0db8b195f9f59e6c64baba70d4bc003cfa2dad87",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "replay.js": "5a2b90533b23b7e30369a9c3109f56dff832b9f8c8e52cf168cb350bb5be2ac5"
+  }
+}

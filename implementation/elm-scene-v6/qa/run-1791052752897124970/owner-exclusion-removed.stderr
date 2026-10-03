@@ -1,0 +1,25 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: flags-0-2-2-0
++ actual - expected
+
+  {
++   accepted: false,
++   error: 'Order does not equal live eligibility'
+-   accepted: true,
+-   focus: null,
+-   hit: null,
+-   paint: []
+  }
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/owner-exclusion-removed/qa/check.cjs:13:33)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async main (/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/owner-exclusion-removed/qa/check.cjs:28:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Object],
+  expected: [Object],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

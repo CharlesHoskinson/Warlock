@@ -1,0 +1,220 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "src/Scene.elm": "b62766f7112975604fdc3a9a0e58c7fcf74b02aaeefde9f9f3a3739445124505",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/run.py": "9075670e0fe78592f2ce5b545849f8e2b5ad19e29599a5b577490c0584fdf74b",
+    "qa/check.cjs": "b35ef0c948f4a169757112533ddc0e6e26c85848aeae1752066cc9e3eccafd9d",
+    "spec/scene.qnt": "1bb8064cba6a4b90d0f000fc3b7d99a9600dfb7498e0e2a7489d197366486fe4"
+  },
+  "observedUTC": "2026-10-03T18:39:12.898050+00:00",
+  "scope": "CPU admission prototype only; not native canonical scene, pixels, hit dispatch or focus acceptance",
+  "commands": [
+    {
+      "name": "elm-version",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-admission",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "spec/scene.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-tests",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "spec/scene.qnt",
+        "--match",
+        "Test$",
+        "--seed",
+        "610601",
+        "--max-samples",
+        "1",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/traces/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "spec/scene.qnt",
+        "--invariants",
+        "safety",
+        "--seed",
+        "610602",
+        "--max-samples",
+        "1000",
+        "--max-steps",
+        "40",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/traces/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "quint-elm-conformance",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "owner-exclusion-removed-derivative-compile",
+      "exitCode": 0
+    },
+    {
+      "name": "owner-exclusion-removed",
+      "exitCode": 1,
+      "expectedAssertionFailure": "flags-"
+    },
+    {
+      "name": "modal-block-removed-derivative-compile",
+      "exitCode": 0
+    },
+    {
+      "name": "modal-block-removed",
+      "exitCode": 1,
+      "expectedAssertionFailure": "modal-blocked-parent"
+    }
+  ],
+  "artifacts": {
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout": "85796cb28c04498c2cacaa73250db026e4daeb80ae0db648db2d078936c9a5f9",
+    "conformance-report.json": "afee0b89c3d6d08d9d6d9aa36c1a2273721ff9869656847167765cc127969218",
+    "elm-admission.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "elm-admission.stdout": "e3a48badeec16fb7fd158a397b9ab3680450e1558c4a5547d4245eb6515c2972",
+    "elm-report.json": "1efe016b60032a675028f5e1888f412b234a241d4a7f283d3984fbd0d01c6375",
+    "elm-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elm-version.stdout": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+    "inputs/elm-stuff/0.19.2/Replay.elmi": "47e5afd99c2df7cc147e76b0397d3773359f050b240f7a59e09c51a0a4473790",
+    "inputs/elm-stuff/0.19.2/Replay.elmo": "46b83fb5c7472febfdcb447851edb06b0877f1c25a146030e2ac2d5f6fa292c7",
+    "inputs/elm-stuff/0.19.2/Scene.elmi": "efc446269f1643d6b9e24e303c0ef8c5d205ef5df702edaf586d1bb853a2fac8",
+    "inputs/elm-stuff/0.19.2/Scene.elmo": "346853a10cdb35e67c28fecad732262c74794fc1f5ac8a7646affee5b1c26e12",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/d.dat": "1f7a53ade749833bfeda126dad963ecdb007713e659c1ebc8fff5828c372ead8",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/check.cjs": "b35ef0c948f4a169757112533ddc0e6e26c85848aeae1752066cc9e3eccafd9d",
+    "inputs/qa/run.py": "9075670e0fe78592f2ce5b545849f8e2b5ad19e29599a5b577490c0584fdf74b",
+    "inputs/spec/scene.qnt": "1bb8064cba6a4b90d0f000fc3b7d99a9600dfb7498e0e2a7489d197366486fe4",
+    "inputs/src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "inputs/src/Scene.elm": "b62766f7112975604fdc3a9a0e58c7fcf74b02aaeefde9f9f3a3739445124505",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "modal-block-removed/elm-stuff/0.19.2/Replay.elmi": "47e5afd99c2df7cc147e76b0397d3773359f050b240f7a59e09c51a0a4473790",
+    "modal-block-removed/elm-stuff/0.19.2/Replay.elmo": "46b83fb5c7472febfdcb447851edb06b0877f1c25a146030e2ac2d5f6fa292c7",
+    "modal-block-removed/elm-stuff/0.19.2/Scene.elmi": "efc446269f1643d6b9e24e303c0ef8c5d205ef5df702edaf586d1bb853a2fac8",
+    "modal-block-removed/elm-stuff/0.19.2/Scene.elmo": "b406455aa6cacdef1fb83caf2023b894eaa5f1edcbc53c308d3f029d0c4c5ca6",
+    "modal-block-removed/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "modal-block-removed/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "modal-block-removed/elm-stuff/0.19.2/d.dat": "6d7f6731918beccfc2f79102647aad1edeab74cdeb3e45e698955ec5e09c396c",
+    "modal-block-removed/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "modal-block-removed/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modal-block-removed/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "modal-block-removed/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "modal-block-removed/qa/check.cjs": "b35ef0c948f4a169757112533ddc0e6e26c85848aeae1752066cc9e3eccafd9d",
+    "modal-block-removed/qa/run.py": "9075670e0fe78592f2ce5b545849f8e2b5ad19e29599a5b577490c0584fdf74b",
+    "modal-block-removed/replay.js": "aebc8c267d5edd387554d33317ccb34a012f97b41b2b8d337f2012e7a35d003a",
+    "modal-block-removed/spec/scene.qnt": "1bb8064cba6a4b90d0f000fc3b7d99a9600dfb7498e0e2a7489d197366486fe4",
+    "modal-block-removed/src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "modal-block-removed/src/Scene.elm": "003f42c01bbe28b0af0246ec21bc0b868869c69369a87407df91bbb8275c474e",
+    "modal-block-removed/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "modal-block-removed-derivative-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modal-block-removed-derivative-compile.stdout": "2abf0bbaac5085b27929afe71e19d981bc3243c54e91989ea73dab4e3ce364d5",
+    "modal-block-removed.stderr": "f606aa7c4b900435940166441cfd998a3c2647f855943fc90a99da5dd837256e",
+    "modal-block-removed.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-exclusion-removed/elm-stuff/0.19.2/Replay.elmi": "47e5afd99c2df7cc147e76b0397d3773359f050b240f7a59e09c51a0a4473790",
+    "owner-exclusion-removed/elm-stuff/0.19.2/Replay.elmo": "46b83fb5c7472febfdcb447851edb06b0877f1c25a146030e2ac2d5f6fa292c7",
+    "owner-exclusion-removed/elm-stuff/0.19.2/Scene.elmi": "efc446269f1643d6b9e24e303c0ef8c5d205ef5df702edaf586d1bb853a2fac8",
+    "owner-exclusion-removed/elm-stuff/0.19.2/Scene.elmo": "19f060c0e0011517c96b10e460e8f170ee1ad144389f46a6d72956c068eac242",
+    "owner-exclusion-removed/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "owner-exclusion-removed/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "owner-exclusion-removed/elm-stuff/0.19.2/d.dat": "3c5f07877bbdbadf12e91d60f25d87246e9fa033ecac0efdfb3f6b110df18d86",
+    "owner-exclusion-removed/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "owner-exclusion-removed/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-exclusion-removed/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "owner-exclusion-removed/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "owner-exclusion-removed/qa/check.cjs": "b35ef0c948f4a169757112533ddc0e6e26c85848aeae1752066cc9e3eccafd9d",
+    "owner-exclusion-removed/qa/run.py": "9075670e0fe78592f2ce5b545849f8e2b5ad19e29599a5b577490c0584fdf74b",
+    "owner-exclusion-removed/replay.js": "e64b3b474767c1fc4a890126d562c34dbfb83ea840c16da25590fd62a67da9d0",
+    "owner-exclusion-removed/spec/scene.qnt": "1bb8064cba6a4b90d0f000fc3b7d99a9600dfb7498e0e2a7489d197366486fe4",
+    "owner-exclusion-removed/src/Replay.elm": "aa07a370a0335941b9ffe4c064c1387ddb297e40d24a527d13d56e9f8d4e9f54",
+    "owner-exclusion-removed/src/Scene.elm": "fa55ba20a5157c46844b033a49762d1f813eeb7083b49f9f7f7a05f6f2594892",
+    "owner-exclusion-removed/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "owner-exclusion-removed-derivative-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-exclusion-removed-derivative-compile.stdout": "10d135053f7b06895e00ef3578d420ca6ed371adfc69296b2e6278008adc458d",
+    "owner-exclusion-removed.stderr": "3cc461e970c7bac58880ec86a122ed7604c4f124cdb91055e808257ebadbc7ee",
+    "owner-exclusion-removed.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-elm-conformance.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "quint-elm-conformance.stdout": "448e9af6b1d45f486f341035392e7e7864c4465daeb70323a1d40bdf03a07d53",
+    "quint-invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-invariants.stdout": "2ae7886dcab15b1c85ccfcbe64ef58ba9bae0fcb3a22dafbeb79f153d8bc29ff",
+    "quint-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-tests.stdout": "8c596e8d2bba4badbede4792e92074d9b6c45b2b1b4f5d09cb7da80e902def64",
+    "quint-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "replay.js": "5a2b90533b23b7e30369a9c3109f56dff832b9f8c8e52cf168cb350bb5be2ac5",
+    "traces/named-childBeforeOwnerRefusedTest-3.itf.json": "7516e5a7f7794bd6940571abe6d5b8f975456c93cbb7e7bf8addee2c4b4ae9fa",
+    "traces/named-duplicateRefusedTest-5.itf.json": "d1fb383ab5555f68394dfb1a8db3466bc83ad1723eed97057d88fb60f5fceff2",
+    "traces/named-lockAcceptedTest-4.itf.json": "6caae2744d2976bf8d35a13ed29f160395a08e4a9360cf3f4012389b7259e67b",
+    "traces/named-minimizedFamilyAcceptedTest-1.itf.json": "86e775157fe1dc463e53b26159202aa0577f6ecd741161cea5a9af4554bda471",
+    "traces/named-minimizedOwnerRefusedTest-0.itf.json": "8469b247529059a6d3108523301cb1ca685ac44dba596677dd89721abc6b9ac5",
+    "traces/named-modalParentRefusedTest-2.itf.json": "66836ce3040740870f86d04929c37049d3186a47d701406f406a0a7679d8fc94",
+    "traces/sample-0.itf.json": "1e2f67dda8dbb5f076bbf44d2fa7182db8e8454c0e5750edbee8faddf4aaf45b"
+  }
+}

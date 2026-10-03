@@ -1,0 +1,17 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: modal-blocked-parent
+
+true !== false
+
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/modal-block-removed/qa/check.cjs:14:17)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async main (/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-v6/qa/run-1791052752897124970/modal-block-removed/qa/check.cjs:51:44) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

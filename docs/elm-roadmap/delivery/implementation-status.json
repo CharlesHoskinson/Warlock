@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-baseline-v5",
-  "status": "Event-driven native projection rendered in Elm webview; isolated Intel/Mesa hardware graphics observed; complete scene/effects, host selection and production gates pending",
+  "activeSlice": "implementation/elm-scene-v6",
+  "status": "Pure Elm atomic scene admission compiled and model/replay/mutation checked; native complete-scene integration, original campaigns and release gates remain open",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -19,7 +19,8 @@
     "ELM-GPU-001",
     "ELM-GPU-002",
     "ELM-GPU-004",
-    "ELM-QA-024"
+    "ELM-QA-024",
+    "ELM-LAY-001"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -100,7 +101,18 @@
       "protectedVerificationPassed": true,
       "nativeAcceptance": false,
       "evidence": "implementation/elm-baseline-v5/ledger.json"
+    },
+    "sceneV6": {
+      "elmFixtureCases": 4117,
+      "quintNamedTests": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFReplayTraces": 7,
+      "actualITFReplayStates": 59,
+      "compiledUnsafeMutantsDetected": 2,
+      "nativeAcceptance": false,
+      "evidence": "implementation/elm-scene-v6/qa/run-1791052752897124970/report.json"
     }
   },
-  "next": "Recover S01 unchanged native campaign oracles and S02 product budgets; compare/qualify hosts including input/IME/AT; extend native projection into the complete canonical scene and guarded effects for actual layering/focus/minimize repair."
+  "next": "Finish S01 discovery and S02 budgets; implement authenticated complete native scene observations and compositor-owned exclusion/order/focus; bind admitted projections into the actual Elm view before original Brave/Heroic/native campaign acceptance."
 }
