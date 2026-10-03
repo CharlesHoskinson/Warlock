@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T22:38:46.353661+00:00",
+  "partialEvidenceObservedUTC": "2026-10-03T22:49:54.448158+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6253,6 +6253,22 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json",
       "acceptance": "Unit-scale untransformed quiescent owner/MAX input-hole delivery only. Complete roles, output/device mapping, scene/presentation, human UX, AT/IME, performance and release remain open."
+    },
+    {
+      "slice": "implementation/elm-output-transforms-v26",
+      "level": "native-render/output/input-component and frozen compiled diagnostic replay",
+      "outputMoveScale180NativeChecks": 111,
+      "all8TransformNativeChecks": 168,
+      "typedActualPacketChecks": 109,
+      "actualLogicalInputHolePointerKeyboardRouting": true,
+      "retainedConfigurationImmutable": true,
+      "preservedCaptureCoordinateFailure": true,
+      "newQuintRun": false,
+      "rawScanoutOrPresentationProof": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-output-transforms-v26/qa/slice-manifest.json",
+      "acceptance": "All8 transforms at125% scale in isolated owner/peer overlap with normalized captures and logical virtual-pointer routing only. Raw scanout, physical device, multi-output/hotplug, complete scene/presentation, human UX, AT/IME, performance and release remain open."
     }
   ]
 }

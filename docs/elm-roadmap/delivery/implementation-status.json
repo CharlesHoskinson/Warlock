@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-input-hit-v23",
-  "status": "Fixed native rectangle-only selection accepting client input holes. Actual hole/solid/restored pointer and keyboard delivery above lower owner and MAX passed; full scene, output mapping, presentation, comprehensive UI/UX and release remain open.",
+  "activeSlice": "implementation/elm-output-transforms-v26",
+  "status": "Actual output move,125% scale and8 transforms preserve retained facts and route logical pointer/keyboard input correctly in bounded native owner/peer overlap. Scene dependencies, complete roles/buffer/clip/multi-output hardware/presentation and integrated UX/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -300,9 +300,22 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
+    },
+    "outputMappingV26": {
+      "outputMoveScale180NativeChecks": 111,
+      "all8TransformNativeChecks": 168,
+      "typedActualPacketChecks": 109,
+      "actualLogicalInputHolePointerKeyboardRouting": true,
+      "retainedConfigurationImmutable": true,
+      "preservedCaptureCoordinateFailure": true,
+      "newQuintRun": false,
+      "rawScanoutOrPresentationProof": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-output-transforms-v26/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify actual output configuration changes and scaled/transformed surface/input mapping, then establish coherent scene admission and build integrated taskbar/navigation/previews. Complete all UI/UX, accessibility/IME, GPU and release gates.",
+  "next": "Implement coherent native scene dependencies and typed Elm admission, then integrate taskbar and switcher. Continue complete roles, viewport/buffer/clip mapping, multi-output/device/hardware, presentation, original preview deadlines, UI/UX/AT/IME/GPU/release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

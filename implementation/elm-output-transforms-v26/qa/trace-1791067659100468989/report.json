@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "scope": "Historical compiled decoder against109 actual output/mask native packets; no additional compiler or model run",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/replay.js": "d3ee03ad6ac0c196c20522a5bf7223bacbf6d4f5acbe4fcea4910cb908dcf836",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/trace.cjs": "6a7b6c16cc2f3b95f9e8ce3ada917206570d812a6eaeabf88302d913f09373bf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/trace.py": "009cd5072f89bf6e9d758a603450cd5f97de24cff67afa9d33fcaf5284129058",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-mapping-v25/qa/native-1791067430470077279/report.json": "478062963a55084592ff0d084966cdcf4405359f466e446943f05da96d526c1c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/native-1791067554195341385/report.json": "69a87f0b6ef3afd0fc2b94d60e050e383ae9a5ce34a9a6f54c4157103945fdf3"
+  },
+  "command": [
+    "node",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/trace-1791067659100468989/trace.cjs",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/trace-1791067659100468989/replay.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/trace-1791067659100468989/checks.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-mapping-v25/qa/native-1791067430470077279/report.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-output-transforms-v26/qa/native-1791067554195341385/report.json"
+  ],
+  "exitCode": 0,
+  "checks": 109,
+  "checksSHA256": "f5223521b25c9c03cccee329754dc64656339d3878547df709131a5e3891b5de",
+  "ancestorManifestSHA256": "269a58714d92c5461bc81eae3c75e961452904e86ae5a5e80eef63bb471f6384"
+}
